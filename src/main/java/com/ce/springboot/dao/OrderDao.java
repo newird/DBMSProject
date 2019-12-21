@@ -2,29 +2,20 @@ package com.ce.springboot.dao;
 
 import com.ce.springboot.pojo.Order;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Mapper
-@Repository
 public interface OrderDao {
+    int deleteByPrimaryKey(String orderid);
 
-        int deleteByPrimaryKey(String orderid);
+    int insert(Order record);
 
-        int insert(Order record);
+    int insertSelective(Order record);
 
-        int insertSelective(Order record);
+    Order selectByPrimaryKey(String orderid);
 
-       Order selectByPrimaryKey(String orderid);
+    int updateByPrimaryKeySelective(Order record);
 
-        int updateByPrimaryKeySelective(Order record);
+    int updateByPrimaryKeyWithBLOBs(Order record);
 
-        int updateByPrimaryKeyWithBLOBs(Order record);
-
-        int updateByPrimaryKey(Order record);
-
-        List<Order> selectAll();
-        List<Order> select();
-
+    int updateByPrimaryKey(Order record);
 }

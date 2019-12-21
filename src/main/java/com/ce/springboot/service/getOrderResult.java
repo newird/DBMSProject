@@ -4,7 +4,6 @@ import com.ce.springboot.dao.ClientDao;
 import com.ce.springboot.dao.GoodDao;
 import com.ce.springboot.dao.OrderDao;
 import com.ce.springboot.dao.OrderGoodDao;
-import com.ce.springboot.pojo.Order;
 import com.ce.springboot.pojo.OrderResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,8 +22,8 @@ public class getOrderResult {
     private List<OrderResult> orderres;
 
 
-    public List<Order> getOrderResult() {
-        List<Order> orders = orderDao.selectAll();
+//    public List<Order> getOrderResult() {
+//        List<Order> orders = orderDao.selectAll();
 //        for (Order order : orders) {
 //            OrderResult orderResult = new OrderResult();
 //            orderResult.setOrder(order);
@@ -40,6 +39,6 @@ public class getOrderResult {
 //            orderres.add(orderResult);
 //        }
 //        return orderres;
-        return orders;
-    }
+//        return orders;
+//    }
 }

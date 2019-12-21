@@ -18,7 +18,7 @@ public class Contactman {
 
     private String email;
 
-//    private int company;
+    private int company;
 
     private Integer employeeid;
     private static final long serialVersionUID = 1L;
@@ -43,12 +43,12 @@ public class Contactman {
                 ", employeeid=" + employeeid +
                 '}';
     }
-//
-//    public int getCompany() {
-//        return company;
-//    }
-//
-//    public void setCompany(int company) {
-//        this.company = company;
-//    }
+
+    public int getCompany() {
+        return company;
+    }
+
+    public void setCompany(int company) {
+        this.company = company;
+    }
 }

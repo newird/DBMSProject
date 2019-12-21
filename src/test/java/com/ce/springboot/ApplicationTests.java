@@ -25,26 +25,6 @@ class ApplicationTests {
 
 		private List<OrderResult> orderres = new ArrayList<>();
 
-		@Test
-		public void order() {
-			List<Order> orders = orderDao.selectAll();
-
-			for (Order order : orders) {
-				OrderResult orderResult = new OrderResult();
-				orderResult.setOrder(order);
-				int clientId = order.getClient();
-				Client client = clientDao.selectById(clientId);
-				orderResult.setClient(client);
-				List<Integer> goodsId = orderGoodDao.order2good(order.getOrderid());
-				List<Good> goods = new ArrayList<>();
-				for (Integer goodId : goodsId) {
-					goods.add(goodDao.selectByPrimaryKey(goodId));
-				}
-				orderResult.setGood(goods);
-				orderres.add(orderResult);
-				System.out.println("goods = " + goods);
-			}
-		}
 
 
 		@Test
@@ -55,13 +35,6 @@ class ApplicationTests {
 			}
 		}
 
-		@Test
-		public void order(){
-			List<Order> orders = orderDao.select();
-			for (Order order : orders) {
-				System.out.println("order = " + order);
-			}
-		}
 
 		@Test
 		public void Con(){
@@ -70,18 +43,7 @@ class ApplicationTests {
 				System.out.println("client = " + client);
 			}
 		}
-		@Test
-		public  void insert(){
-				Client client= new Client("大连那啥公司", "daliannasha", "大拿", "124@163.com", "1234569632588763", "中国银行", 12345668, "辽宁", "大连");
 
-
-				Contactman contactman = new Contactman("王三四","秘书","13245678765",2355467,"wer@162.com",123211);
-//			contactman.setCompany(client.getCompanycode());
-//				clientDao.insert(client);
-				contactmanDao.insert(contactman);
-
-
-			}
 }
 
 

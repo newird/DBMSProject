@@ -16,30 +16,6 @@
     <result column="rcity" jdbcType="CHAR" property="rcity" />
     <result column="time" jdbcType="DATE" property="time" />
   </resultMap>
-  <resultMap id="OO" type="com.ce.springboot.pojo.Order">
-    <id column="orderId" jdbcType="CHAR" property="orderid" />
-    <result column="client" jdbcType="com.ce.springboot.pojo.Client" property="client" />
-    <result column="send" jdbcType="VARCHAR" property="send" />
-    <result column="sphone" jdbcType="CHAR" property="sphone" />
-    <result column="semail" jdbcType="VARCHAR" property="semail" />
-    <result column="sprovince" jdbcType="CHAR" property="sprovince" />
-    <result column="scity" jdbcType="CHAR" property="scity" />
-    <result column="receive" jdbcType="VARCHAR" property="receive" />
-    <result column="rphone" jdbcType="CHAR" property="rphone" />
-    <result column="remail" jdbcType="VARCHAR" property="remail" />
-    <result column="rprovince" jdbcType="CHAR" property="rprovince" />
-    <result column="rcity" jdbcType="CHAR" property="rcity" />
-    <result column="time" jdbcType="DATE" property="time" />
-  </resultMap>
-    <select id="select" resultMap="OO">
-      select o.orderId,c.NameZh, sendAdd, `time`,
-       receiveAdd, send, sphone, semail, receive, rphone, remail, `check`,
---        og.num,g.name,g.goodID
---       from `order` o, "order-good" og ,good g,client c
-      where o.client = c.companyCode
-      and o.orderId = og.orderID
-      and og.goodID = g.goodID;
-    </select>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.ce.springboot.pojo.Order">
     <result column="check" jdbcType="LONGVARCHAR" property="check" />
   </resultMap>
@@ -63,12 +39,12 @@
     where orderId = #{orderid,jdbcType=CHAR}
   </delete>
   <insert id="insert" keyColumn="orderId" keyProperty="orderid" parameterType="com.ce.springboot.pojo.Order" useGeneratedKeys="true">
-    insert into `order` (orderId,client, send, sphone,
+    insert into order (client, send, sphone, 
       semail, sprovince, scity, 
       receive, rphone, remail, 
       rprovince, rcity, `time`, `check`
       )
-    values (#{orderid,jdbcType=VARCHAR},#{client,jdbcType=INTEGER}, #{send,jdbcType=VARCHAR}, #{sphone,jdbcType=CHAR},
+    values (#{client,jdbcType=INTEGER}, #{send,jdbcType=VARCHAR}, #{sphone,jdbcType=CHAR}, 
       #{semail,jdbcType=VARCHAR}, #{sprovince,jdbcType=CHAR}, #{scity,jdbcType=CHAR}, 
       #{receive,jdbcType=VARCHAR}, #{rphone,jdbcType=CHAR}, #{remail,jdbcType=VARCHAR}, 
       #{rprovince,jdbcType=CHAR}, #{rcity,jdbcType=CHAR}, #{time,jdbcType=DATE}, #{check,jdbcType=LONGVARCHAR}
@@ -237,8 +213,4 @@
       `time` = #{time,jdbcType=DATE}
     where orderId = #{orderid,jdbcType=CHAR}
   </update>
-
-  <select id="selectAll" resultType="com.ce.springboot.pojo.Order">
-    select * from `order`;
-  </select>
 </mapper>

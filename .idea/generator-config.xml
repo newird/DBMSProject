@@ -105,11 +105,11 @@
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="OrderDao" />
-              <option name="daoPackage" value="" />
+              <option name="daoPackage" value="com.ce.springboot.dao" />
               <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
               <option name="modelName" value="Order" />
-              <option name="modelPackage" value="" />
+              <option name="modelPackage" value="com.ce.springboot.pojo" />
               <option name="name" value="order" />
               <option name="overrideJava" value="true" />
               <option name="overrideXML" value="true" />
