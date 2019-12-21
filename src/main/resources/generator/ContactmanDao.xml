@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ce.springboot.dao.ContactmanDao">
+  <resultMap id="BaseResultMap" type="com.ce.springboot.pojo.Contactman">
+    <id column="company" jdbcType="INTEGER" property="company" />
+    <id column="employeeId" jdbcType="INTEGER" property="employeeid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="phone" jdbcType="INTEGER" property="phone" />
+    <result column="tax" jdbcType="INTEGER" property="tax" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+  </resultMap>
+  <resultMap id="CCtMap" type="com.ce.springboot.pojo.Contactman">
+    <id column="company" jdbcType="INTEGER" property="company" />
+    <id column="employeeId" jdbcType="INTEGER" property="employeeid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="phone" jdbcType="INTEGER" property="phone" />
+    <result column="tax" jdbcType="INTEGER" property="tax" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <association property="company" column="company" select="getCompany"/>
+  </resultMap>
+  <select id="getContactman" resultMap="CCtMap">
+    select * from  contactman;
+  </select>
+  <select id="getCompany" resultType="com.ce.springboot.pojo.Client">
+    select * from  client where companyCode=#{company};
+  </select>
+  <sql id="Base_Column_List">
+    company, employeeId, `name`, title, phone, tax, email
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from contactman
+    where company = #{company,jdbcType=INTEGER}
+      and employeeId = #{employeeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey">
+    delete from contactman
+    where company = #{company,jdbcType=INTEGER}
+      and employeeId = #{employeeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="company" keyProperty="company" parameterType="com.ce.springboot.pojo.Contactman" useGeneratedKeys="true">
+    insert into contactman (employeeId, `name`, title, 
+      phone, tax, email,company)
+    values (#{employeeid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=INTEGER}, #{tax,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR},#{company,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="company" keyProperty="company" parameterType="com.ce.springboot.pojo.Contactman" useGeneratedKeys="true">
+    insert into contactman
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="employeeid != null">
+        employeeId,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="tax != null">
+        tax,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="employeeid != null">
+        #{employeeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=INTEGER},
+      </if>
+      <if test="tax != null">
+        #{tax,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ce.springboot.pojo.Contactman">
+    update contactman
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=INTEGER},
+      </if>
+      <if test="tax != null">
+        tax = #{tax,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where company = #{company,jdbcType=INTEGER}
+      and employeeId = #{employeeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ce.springboot.pojo.Contactman">
+    update contactman
+    set `name` = #{name,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=INTEGER},
+      tax = #{tax,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR}
+    where company = #{company,jdbcType=INTEGER}
+      and employeeId = #{employeeid,jdbcType=INTEGER}
+  </update>
+</mapper>

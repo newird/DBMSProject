@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addUser</title>
+</head>
+<body>
+
+
+<script src="js/perfect-scrollbar.jquery.min.js"></script>
+
+<script src="js/waves.js"></script>
+
+<script src="js/sidebarmenu.js"></script>
+
+<script src="js/custom.min.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+
+<form th:action="@{/userUpdate}" method="post">
+    <input name="id" type="hidden" th:value="${user.getId()}"><br>
+    名称<input name="adminuser" type="text" th:value="${user.getAdminuser()}"><br>
+    密码<input name="password" type="text" th:value="${user.getPassword()}"><br>
+    权限<input name="perm" type="text" th:value="${user.getPerm()} "><br>
+    <button type="submit" class="btn btn-primary">修改</button>
+</form>
+</body>
+</html>
+</body>
+</html>

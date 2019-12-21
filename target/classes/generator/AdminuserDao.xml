@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ce.springboot.dao.AdminuserDao">
+  <resultMap id="AdminuserMap" type="com.ce.springboot.pojo.Adminuser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="adminUser" jdbcType="VARCHAR" property="adminuser" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="perm" jdbcType="VARCHAR" property="perm" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, adminUser, `password`, perm
+  </sql>
+  <select id="selectLogin" parameterType="java.lang.String" resultMap="AdminuserMap">
+    select *  from adminuser where adminuser = #{param1} and password = #{param2}
+  </select>
+  <select id="selectAllUser" parameterType="java.lang.String" resultMap="AdminuserMap">
+    select *  from adminuser
+  </select>
+
+  <select id="selectByPrimaryKeyUser" parameterType="java.lang.Integer" resultMap="AdminuserMap">
+    select 
+    <include refid="Base_Column_List" />
+    from adminuser
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteByPrimaryKeyUser" parameterType="java.lang.Integer">
+    delete from adminuser
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertUser" keyColumn="id" keyProperty="id" parameterType="com.ce.springboot.pojo.Adminuser" useGeneratedKeys="true">
+    insert into adminuser (adminUser, `password`, perm
+      )
+    values (#{adminuser,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{perm,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelectiveUser" keyColumn="id" keyProperty="id" parameterType="com.ce.springboot.pojo.Adminuser" useGeneratedKeys="true">
+    insert into adminuser
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adminuser != null">
+        adminUser,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="perm != null">
+        perm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adminuser != null">
+        #{adminuser,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="perm != null">
+        #{perm,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelectiveUser" parameterType="com.ce.springboot.pojo.Adminuser">
+    update adminuser
+    <set>
+      <if test="adminuser != null">
+        adminUser = #{adminuser,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="perm != null">
+        perm = #{perm,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyUser" parameterType="com.ce.springboot.pojo.Adminuser">
+    update adminuser
+    set adminUser = #{adminuser,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      perm = #{perm,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

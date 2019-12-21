@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>addUser</title>
+</head>
+<body>
+
+
+<script src="js/perfect-scrollbar.jquery.min.js"></script>
+
+<script src="js/waves.js"></script>
+
+<script src="js/sidebarmenu.js"></script>
+
+<script src="js/custom.min.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<form th:action="@{/addUser}" method="post">
+    id<input name="id" type="text"><br>
+    名称<input name="adminuser" type="text"><br>
+    密码<input name="password" type="text"><br>
+    权限<input name="perm" type="text"><br>
+    <button type="submit" class="btn btn-primary">添加</button>
+</form>
+</body>
+</html>

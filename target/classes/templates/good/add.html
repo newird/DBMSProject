@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+    <form th:action="@{/goodadd}" method="post">
+        货物编号        <input type="text" name="goodid"><br>
+        货物名         <input type="text" name="name"><br>
+        保质期（天）   <input type="text" name="expiry"><br>
+        保存温度       <input type="text" name="temperature"><br>
+        类型          <input type="text" name="type"><br>
+        质量          <input type="text" name="mass"><br>
+        包装方式         <input type="text" name="packages"><br>
+        长      <input type="text" name="length"><br>
+        宽           <input type="text" name="width"><br>
+        高        <input type="text" name="height"><br>
+        单位           <input type="text" name="unit"><br>
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>

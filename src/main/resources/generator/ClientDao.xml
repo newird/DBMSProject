@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ce.springboot.dao.ClientDao">
+<!--  <resultMap id="BaseResultMap" type="com.ce.springboot.pojo.Client">-->
+<!--    <result column="NameZh" jdbcType="VARCHAR" property="namezh" />-->
+<!--    <result column="NameEn" jdbcType="VARCHAR" property="nameen" />-->
+<!--    <result column="nameSp" jdbcType="VARCHAR" property="namesp" />-->
+<!--    <result column="email" jdbcType="VARCHAR" property="email" />-->
+<!--    <result column="blankId" jdbcType="CHAR" property="blankid" />-->
+<!--    <result column="blank" jdbcType="VARCHAR" property="blank" />-->
+<!--    <result column="province" jdbcType="CHAR" property="province" />-->
+<!--    <result column="city" jdbcType="CHAR" property="city" />-->
+
+<!--    <result column="province" jdbcType="CHAR" property="province" />-->
+<!--    <result column="city" jdbcType="CHAR" property="city" />-->
+<!--  </resultMap>-->
+  <resultMap id="CC" type="com.ce.springboot.pojo.Client">
+    <result property="namezh" column="NameZh"/>
+      <result property="nameen" column="NameEn"/>
+      <result property="namesp" column="namesp"/>
+      <result property="email" column="email" javaType="java.lang.String" jdbcType="CHAR"/>
+      <result property="blankid" column="blankid" javaType="java.lang.String"/>
+      <result property="blank" column="blank"/>
+      <result property="companycode" column="companycode"/>
+      <result property="province" column="province"/>
+      <result property="city" column="city"/>
+
+   </resultMap>
+
+  <select id="select" resultMap="CC">
+        select  c.NameZh, NameEn, nameSp,c.email
+        blankId,blank,companyCode,province,city ,
+
+        from client c,contactman cm
+        where c.companyCode = cm.company;
+  </select>
+  <select id="selectById" resultType="com.ce.springboot.pojo.Client">
+    select * from client where companyCode = #{companycode};
+  </select>
+  <insert id="insert" parameterType="com.ce.springboot.pojo.Client">
+    insert into client (NameZh, NameEn, nameSp, 
+      email, blankId, blank, 
+      companyCode, province, city
+      )
+    values (#{namezh,jdbcType=VARCHAR}, #{nameen,jdbcType=VARCHAR}, #{namesp,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{blankid,jdbcType=CHAR}, #{blank,jdbcType=VARCHAR}, 
+      #{companycode,jdbcType=INTEGER}, #{province,jdbcType=CHAR}, #{city,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ce.springboot.pojo.Client">
+    insert into client
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="namezh != null">
+        NameZh,
+      </if>
+      <if test="nameen != null">
+        NameEn,
+      </if>
+      <if test="namesp != null">
+        nameSp,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="blankid != null">
+        blankId,
+      </if>
+      <if test="blank != null">
+        blank,
+      </if>
+      <if test="companycode != null">
+        companyCode,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="namezh != null">
+        #{namezh,jdbcType=VARCHAR},
+      </if>
+      <if test="nameen != null">
+        #{nameen,jdbcType=VARCHAR},
+      </if>
+      <if test="namesp != null">
+        #{namesp,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="blankid != null">
+        #{blankid,jdbcType=CHAR},
+      </if>
+      <if test="blank != null">
+        #{blank,jdbcType=VARCHAR},
+      </if>
+      <if test="companycode != null">
+        #{companycode,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=CHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+
+
+  <delete id="delete" parameterType="int" >
+    delete from client where companyCode = #{companycode};
+  </delete>
+
+  <update id="updateById" parameterType="com.ce.springboot.pojo.Client">
+ update client
+ <set>
+    <if test="namezh != null">
+      `nameZh` = #{namezh,jdbcType=VARCHAR},
+    </if>
+    <if test="nameen != null">
+      `nameEn` = #{nameen,jdbcType=VARCHAR},
+    </if>
+    <if test="namesp != null">
+      `nameSp`=#{namesp,jdbcType=VARCHAR},
+    </if>
+    <if test="email != null">
+      `email`=#{email,jdbcType=VARCHAR},
+    </if>
+    <if test="blankid != null">
+     `blankId` =  #{blankid,jdbcType=CHAR},
+    </if>
+    <if test="blank != null">
+      `blank`=#{blank,jdbcType=VARCHAR},
+    </if>
+    <if test="province != null">
+      `province` = #{province,jdbcType=CHAR},
+    </if>
+    <if test="city != null">
+      `city`=#{city,jdbcType=CHAR},
+    </if>
+  </set>
+   where companyCode = #{companycode,jdbcType=INTEGER};
+  </update>
+</mapper>

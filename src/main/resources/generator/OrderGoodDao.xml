@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ce.springboot.dao.OrderGoodDao">
+  <resultMap id="BaseResultMap" type="com.ce.springboot.pojo.OrderGood">
+    <result column="orderID" jdbcType="CHAR" property="orderid" />
+    <result column="goodID" jdbcType="INTEGER" property="goodid" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ce.springboot.pojo.OrderGood">
+    insert into order_good (orderID, goodID, num
+      )
+    values (#{orderid,jdbcType=CHAR}, #{goodid,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}
+      )
+  </insert>
+
+  <select id="order2good" parameterType="java.lang.String" resultType="int">
+    select goodID from order_good where orderID = #{orderId};
+  </select>
+  <select id="order2num" parameterType="java.lang.String" resultType="int">
+    select goodID from order_good where orderID = #{orderId};
+  </select>
+  <insert id="insertSelective" parameterType="com.ce.springboot.pojo.OrderGood">
+    insert into order_good
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        orderID,
+      </if>
+      <if test="goodid != null">
+        goodID,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        #{orderid,jdbcType=CHAR},
+      </if>
+      <if test="goodid != null">
+        #{goodid,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

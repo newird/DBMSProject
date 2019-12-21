@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{assets/images/favicon.png}">
+    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link th:href="@{css/style.css}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link th:href="@{css/colors/default-dark.css}" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Admin Pro</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div th:insert="~{common::topbar}"></div>
+
+        <div th:insert="~{common::sidebar}"></div>
+
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Table basic</h3>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to Pro</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">客户信息表</h4>
+                                <h6 class="card-subtitle">Add class <code>客户</code></h6>
+                                <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>中文名</th>
+                                            <th>英文名</th>
+                                            <th>简称</th>
+                                            <th>e-mail</th>
+                                            <th>银行卡</th>
+                                            <th>所在银行</th>
+                                            <th>公司代码</th>
+                                            <th>省</th>
+                                            <th>市</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+<!--                                        <div th:text="${clients}"></div>-->
+                                        <tr th:each="c:${clients}">
+                                            <td th:text="${c.getNamezh()}"></td>
+                                            <td th:text="${c.getNameen()}"></td>
+                                            <td th:text="${c.getNamesp()}"></td>
+                                            <td th:text="${c.getEmail()}"></td>
+                                            <td th:text="${c.getBlankid()}"></td>
+                                            <td th:text="${c.getBlank()}"></td>
+                                            <td th:text="${c.getCompanycode()}"></td>
+                                            <td th:text="${c.getProvince()}"></td>
+                                            <td th:text="${c.getCity()}"></td>
+                                            <td>
+                                                <a class="block btn btn-sm btn-danger" th:href="@{/delClient/}+${c.getCompanycode()}">删除</a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-sm btn-primary" th:href="@{/updateClient/}+${c.getCompanycode()}">编辑</a>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
+    <script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
+    <!--Wave Effects -->
+    <script th:src="@{js/waves.js}"></script>
+    <!--Menu sidebar -->
+    <script th:src="@{js/sidebarmenu.js}"></script>
+    <!--Custom JavaScript -->
+    <script th:src="@{js/custom.min.js}"></script>
+</body>
+
+</html>

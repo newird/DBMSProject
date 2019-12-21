@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/goodupdate}" method="post">
+            <input type="hidden" name="goodid" th:value="${good.getGoodId()}"><br>
+    货物名         <input type="text" name="name" th:value="${good.getName()}"><br>
+    保质期（天）   <input type="text" name="expiry" th:value="${good.getExpiry()}"><br>
+    保存温度       <input type="text" name="temperature" th:value="${good.getTemperature()}"><br>
+    类型          <input type="text" name="type" th:value="${good.getType()}"><br>
+    质量          <input type="text" name="mass" th:value="${good.getMass()}"><br>
+    包装方式         <input type="text" name="packages" th:value="${good.getPackages()}"><br>
+    长      <input type="text" name="length" th:value="${good.getLength()}"><br>
+    宽           <input type="text" name="width" th:value="${good.getWidth()}"><br>
+    高        <input type="text" name="height" th:value="${good.getHeight()}"><br>
+    单位           <input type="text" name="unit" th:value="${good.getUnit()}"><br>
+    <button type="submit">提交</button>
+</form>
+<!--<p th:text="${good}">hello</p>-->
+</body>
+</html>

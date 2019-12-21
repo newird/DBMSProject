@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+<form th:action="@{/addClient}" method="post">
+    公司名称       <input type="text" name="namezh"><br>
+    英文        <input type="text" name="nameen"><br>
+    简称   <input type="text" name="namesp"><br>
+    e-mail       <input type="text" name="email"><br>
+    银行卡号          <input type="text" name="blankid"><br>
+    所在银行          <input type="text" name="blank"><br>
+    公司代码         <input type="text" name="companycode"><br>
+    省      <input type="text" name="province"><br>
+    市           <input type="text" name="city"><br>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

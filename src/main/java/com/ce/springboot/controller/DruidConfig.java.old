@@ -1,0 +1,51 @@
+package com.ce.springboot.controller;/*
+ *用户: 张策
+ *邮箱: newird@protonmail.com
+ *编码时间: 2019/12/13 0013
+ */
+
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
+import javax.sql.DataSource;
+import java.util.HashMap;
+
+@Configuration
+public class DruidConfig {
+    @ConfigurationProperties(prefix = "spring.datasource")
+    @Bean(initMethod = "init",destroyMethod = "close")
+    public DataSource druidDatasource(){
+        return new DruidDataSource();
+    }
+    //后台监控
+    @Bean
+    public ServletRegistrationBean a(){
+        ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
+        //后台密码
+
+
+        HashMap<String ,String > initParameters = new HashMap<>();
+
+        initParameters.put("loginUsername","root");
+        initParameters.put("loginPassword","zhangcece");
+        //允许
+        initParameters.put("allow","");
+        //排除
+//        initParameters("","");
+
+        bean.setInitParameters(initParameters);
+        return bean;
+    }
+    @WebFilter(filterName = "druidWebStatFilter", urlPatterns = "/*", initParams = {
+            @WebInitParam(name = "exclusions", value = "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*")// 忽略资源
+    })
+    public class DruidStatFilter extends WebStatFilter {
+
+    }
+
+}
