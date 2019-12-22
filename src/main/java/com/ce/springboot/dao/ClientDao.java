@@ -12,4 +12,12 @@ public interface ClientDao {
 
     List<Client> selectClient();
 
+    int deleteClientById(int id);
+
+    int insertClient(Client client);
+
+    Client selectById(int id);
+
+    int updateById(Client client);
+
 }

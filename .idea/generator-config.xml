@@ -33,11 +33,11 @@
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="ClientDao" />
-              <option name="daoPackage" value="com.ce.springboot.dao" />
+              <option name="daoPackage" value="" />
               <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
               <option name="modelName" value="Client" />
-              <option name="modelPackage" value="com.ce.springboot.pojo" />
+              <option name="modelPackage" value="" />
               <option name="name" value="client" />
               <option name="overrideJava" value="true" />
               <option name="overrideXML" value="true" />
@@ -47,7 +47,7 @@
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources" />
-              <option name="xmlPackage" value="generator" />
+              <option name="xmlPackage" value="generator.c" />
             </Config>
           </value>
         </entry>

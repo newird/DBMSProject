@@ -23,6 +23,17 @@
             <result property="employeeid" column="cmid"/>
         </collection>
      </resultMap>
+    <resultMap id="baseClient" type="com.ce.springboot.pojo.Client">
+        <result property="namezh" column="namezh"/>
+        <result property="nameen" column="nameen"/>
+        <result property="namesp" column="namesp"/>
+        <result property="email" column="ce"/>
+        <result property="blankid" column="blankid"/>
+        <result property="blank" column="blank"/>
+        <result property="companycode" column="companycode"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+    </resultMap>
     <select id="selectClient" resultMap="ClientMap">
         select  c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
         blankId blankid, blank, companyCode ,province,city, cm.name cname,
@@ -30,4 +41,63 @@
          from client c,contactman cm
          where c.companyCode = cm.company;
     </select>
+
+    <delete id="deleteClientById" parameterType="int">
+        delete from client where companyCode = #{id};
+    </delete>
+
+    <select id="selectById" resultMap="ClientMap">
+        select c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
+        blankId blankid, blank, companyCode ,province,city, cm.name cname,
+        cm.title,cm.phone,cm.tax,cm.email cme, cm.employeeId cmid
+         from client c,contactman cm
+         where c.companyCode = cm.company
+         and c.companyCode=#{id};
+    </select>
+
+    <insert id="insertClient" parameterType="com.ce.springboot.pojo.Client">
+    insert into client (NameZh, NameEn, nameSp,
+      email, blankId, blank,
+      companyCode, province, city
+      )
+    values (#{namezh,jdbcType=VARCHAR}, #{nameen,jdbcType=VARCHAR}, #{namesp,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR}, #{blankid,jdbcType=CHAR}, #{blank,jdbcType=VARCHAR},
+      #{companycode,jdbcType=INTEGER}, #{province,jdbcType=CHAR}, #{city,jdbcType=CHAR}
+      )
+  </insert>
+
+    <update id="updateById" parameterType="com.ce.springboot.pojo.Client">
+        update client
+        <set>
+            <if test="nameZh != null">
+                `nameZh` = #{namezh,jdbcType=VARCHAR},
+            </if>
+            <if test="nameEn != null">
+                nameEn = #{nameen,jdbcType=VARCHAR},
+            </if>
+            <if test="nameSp != null">
+                nameSp = #{namesp,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                `email` = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="blankId != null">
+                blankId = #{blankid,jdbcType=CHAR},
+            </if>
+            <if test="blank != null">
+                blank = #{blank,jdbcType=VARCHAR},
+            </if>
+            <if test="companycode != null">
+                `companycode` = #{companycode,jdbcType=INTEGER},
+            </if>
+            <if test="province != null">
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+
+        </set>
+        where compayCode = #{companycode,jdbcType=INTEGER}
+    </update>
 </mapper>

@@ -1,7 +1,10 @@
 package com.ce.springboot;
 
 import com.ce.springboot.dao.*;
-import com.ce.springboot.pojo.*;
+import com.ce.springboot.pojo.Client;
+import com.ce.springboot.pojo.Contactman;
+import com.ce.springboot.pojo.Good;
+import com.ce.springboot.pojo.OrderResult;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -50,6 +53,17 @@ class ApplicationTests {
 			for (Client client : clients) {
 				System.out.println("client = " + client);
 			}
+		}
+
+		@Test
+	public void iiiccc(){
+			Client client = new Client("上海的公司","shgs","上攻",
+					"e@e.com","1234564876452341","汇丰银行",
+					12343212,"上海","上海");
+
+			int i = clientDao.insertClient(client);
+			System.out.println("i = " + i);
+
 		}
 		
 

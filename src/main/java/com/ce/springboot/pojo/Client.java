@@ -54,6 +54,20 @@ public class Client  {
                 '}';
     }
 
+    public Client(String namezh, String nameen, String namesp,
+                  String email, String blankid, String blank,
+                  Integer companycode, String province, String city) {
+        this.namezh = namezh;
+        this.nameen = nameen;
+        this.namesp = namesp;
+        this.email = email;
+        this.blankid = blankid;
+        this.blank = blank;
+        this.companycode = companycode;
+        this.province = province;
+        this.city = city;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Client(String namezh, String nameen, String namesp,
