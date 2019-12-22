@@ -6,9 +6,28 @@
 
     <resultMap id="ClientMap" type="com.ce.springboot.pojo.Client">
         <result property="namezh" column="namezh"/>
-    </resultMap>
+        <result property="nameen" column="nameen"/>
+        <result property="namesp" column="namesp"/>
+        <result property="email" column="ce"/>
+        <result property="blankid" column="blankid"/>
+        <result property="blank" column="blank"/>
+        <result property="companycode" column="companycode"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <collection property="contactman" ofType="com.ce.springboot.pojo.Contactman">
+            <result property="name" column="cname"/>
+            <result property="title" column="title"/>
+            <result property="phone" column="phone"/>
+            <result property="tax" column="tax"/>
+            <result property="email" column="cme"/>
+            <result property="employeeid" column="cmid"/>
+        </collection>
+     </resultMap>
     <select id="selectClient" resultMap="ClientMap">
-        select  c.NameZh namezh
-         from client c
+        select  c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
+        blankId blankid, blank, companyCode ,province,city, cm.name cname,
+        cm.title,cm.phone,cm.tax,cm.email cme, cm.employeeId cmid
+         from client c,contactman cm
+         where c.companyCode = cm.company;
     </select>
 </mapper>

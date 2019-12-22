@@ -1,6 +1,7 @@
 package com.ce.springboot.pojo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * @author 
  */
 @Data
+@NoArgsConstructor
 public class Client  {
     private String namezh;
 
@@ -29,7 +31,13 @@ public class Client  {
     private String city;
 
     private List<Contactman> contactman;
-    public Client(){}
+
+
+    public Client(String namezh, List<Contactman> contactman) {
+        this.namezh = namezh;
+        this.contactman = contactman;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -48,7 +56,10 @@ public class Client  {
 
     private static final long serialVersionUID = 1L;
 
-    public Client(String namezh, String nameen, String namesp, String email, String blankid, String blank, Integer companycode, String province, String city, List<Contactman> contactman) {
+    public Client(String namezh, String nameen, String namesp,
+                  String email, String blankid, String blank,
+                  Integer companycode, String province, String city,
+                  List<Contactman> contactman) {
         this.namezh = namezh;
         this.nameen = nameen;
         this.namesp = namesp;

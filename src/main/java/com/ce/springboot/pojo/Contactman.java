@@ -1,12 +1,14 @@
 package com.ce.springboot.pojo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * contactman
  * @author 
  */
 @Data
+@NoArgsConstructor
 public class Contactman {
     private String name;
 
@@ -42,6 +44,10 @@ public class Contactman {
                 ", email='" + email + '\'' +
                 ", employeeid=" + employeeid +
                 '}';
+    }
+
+    public Contactman(String name) {
+        this.name = name;
     }
 
     public String getName() {
