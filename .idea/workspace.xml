@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/MD5Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/MyPasswordEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generator-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-boot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/MyMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/MyMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/AdminuserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/AdminuserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/AdminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/AdminuserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/MyMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/MyMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/AdminuserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/AdminuserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/AdminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/AdminuserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,11 +127,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\java\spring-boot\src\main\resources\generator" />
       <recent name="E:\java\spring-boot\src\main\resources\static\js" />
       <recent name="E:\java\spring-boot\src\main\resources\templates" />
       <recent name="E:\java\spring-boot\src\main\resources\templates\good" />
       <recent name="E:\java\spring-boot\src\main\resources\public" />
-      <recent name="E:\java\spring-boot\src\main\resources\static\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java\spring-boot\src\main\resources\static\js" />
@@ -158,7 +141,7 @@
       <recent name="E:\java\spring-boot\src\main\resources\templates\good" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="JUnit.ApplicationTests.ooossoo">
     <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.service.MD5Util" />
       <module name="spring-boot" />
@@ -188,22 +171,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.ccc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ce.springboot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ce.springboot" />
-      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="ccc" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApplicationTests.iiiccc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot" />
       <extension name="coverage">
@@ -215,6 +182,22 @@
       <option name="PACKAGE_NAME" value="com.ce.springboot" />
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
       <option name="METHOD_NAME" value="iiiccc" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.ooossoo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ce.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ce.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
+      <option name="METHOD_NAME" value="ooossoo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -245,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.ooossoo" />
         <item itemvalue="Application.MD5Util" />
         <item itemvalue="JUnit.ApplicationTests.ooosss" />
         <item itemvalue="JUnit.ApplicationTests.iiiccc" />
         <item itemvalue="JUnit.ApplicationTests.OOO" />
-        <item itemvalue="JUnit.ApplicationTests.ccc" />
       </list>
     </recent_temporary>
   </component>
@@ -323,10 +306,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="311" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/73.0.1293.768@73.0.1293.768" timestamp="1576412652403" />
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577003335077">
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577014235487">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577003335077" />
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577014235487" />
     <state x="449" y="159" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576997365910">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -343,46 +326,46 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="242" width="441" height="334" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/73.0.1293.768@73.0.1293.768" timestamp="1576756600233" />
-    <state x="449" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576806914145">
+    <state x="449" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577013319170">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="449" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/73.0.1293.768@73.0.1293.768" timestamp="1576806914145" />
+    <state x="449" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/73.0.1293.768@73.0.1293.768" timestamp="1577013319170" />
     <state x="499" y="139" key="FileChooserDialogImpl" timestamp="1576938154242">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1576938154242" />
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577014504541">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
+    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577014504541">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
+    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577014504541">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
+    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577014504541">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577014046243">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
+    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577014046243">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
+    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577014046243">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
-    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577010716253">
+    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577014046243">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577010716253" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1576412904930">
       <screen x="73" y="0" width="1293" height="768" />
     </state>

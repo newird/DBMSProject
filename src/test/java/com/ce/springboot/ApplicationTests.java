@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -14,6 +15,8 @@ class ApplicationTests {
 
 		@Autowired
 		private OrderDao orderDao;
+		@Autowired
+		private OrderDao2 orderDao2;
 		@Autowired
 		private OrderGoodDao orderGoodDao;
 		@Autowired
@@ -71,6 +74,17 @@ class ApplicationTests {
 			for (Order order : orders) {
 				System.out.println("order = " + order);
 			}
+		}
+		@Test
+	public void ooossoo(){
+			Order2 order2 = new Order2("sd123124", 12343212,
+					"sas","sdas","das","sdasd",
+					"dasd","das","adsas","vsd",
+					"sad","dasd",new Date(),null
+
+			);
+			int i = orderDao2.insert(order2);
+			System.out.println("i = " + i);
 		}
 		
 
