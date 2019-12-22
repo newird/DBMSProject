@@ -1,6 +1,7 @@
 package com.ce.springboot.config;
 
 import com.ce.springboot.pojo.Adminuser;
+import com.ce.springboot.service.MyPasswordEncoder;
 import com.ce.springboot.service.MyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -21,15 +22,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/js/**","/scss/**",
                          "/fonts/**", "/images/**").permitAll()
                 .antMatchers("/good/**","/client/**").hasRole("base")
+                .antMatchers("/goods","/clients").hasRole("base")
+                .antMatchers("/orders").hasRole("base")
+                .antMatchers("/users").hasRole("base")
                 .antMatchers("/order/**").hasRole("service")
                 .antMatchers("/").permitAll();
         //没有权限，默认登陆
-        http.formLogin();
+        http.formLogin().loginPage("/login");
 //        注销
-        http.logout().logoutSuccessUrl("/");
+        http.logout().deleteCookies().logoutSuccessUrl("/");
         http.rememberMe();
 
-        //跨站脚本工具
+        //跨站脚本攻击
         http.csrf().disable();
 
 
@@ -39,10 +43,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userService).passwordEncoder(new MyPasswordEncoder());
-        auth
-                .inMemoryAuthentication()
-                .withUser("admin").password("123456").roles("base");
+        auth.userDetailsService(userService).passwordEncoder(new MyPasswordEncoder());
+//        auth
+//                .inMemoryAuthentication()
+//                .withUser("admin").password("123456").roles("base");
     }
     //认证
     //要加密 不能明文

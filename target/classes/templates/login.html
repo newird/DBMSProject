@@ -25,7 +25,9 @@
               <input name="username" type="text"  value="用户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='用户名'}">
               <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();" >密码</span>
 <input name="password" type="password" id="password" style="display:none;" onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};"/>
+              <p><input type='checkbox' name='remember-me'/> 记住我</p>
               <input value="登录" style="width:100%;" type="submit">
+
           </form>
       </div>
       <div class="copyright">张策有限公司 </div>

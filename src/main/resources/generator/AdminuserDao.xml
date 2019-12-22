@@ -23,7 +23,7 @@
     from adminuser
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectByUsername" parameterType="java.lang.Integer" resultMap="AdminuserMap">
+  <select id="selectByUsername" parameterType="String" resultMap="AdminuserMap">
     select
     <include refid="Base_Column_List" />
     from adminuser

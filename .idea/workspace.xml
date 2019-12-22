@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generator-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c92c0b27-f7d9-4384-9685-f3e9c68ff251.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c92c0b27-f7d9-4384-9685-f3e9c68ff251.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/adminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/adminUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/Adminuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/Adminuser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/MyPasswordEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/MyPasswordEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/adminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/service/adminLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/AdminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/AdminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/adminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/adminUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/Adminuser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/Adminuser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/service/MyPasswordEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/service/MyPasswordEncoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/service/adminLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/service/adminLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generator/AdminuserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/AdminuserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/common.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +159,7 @@
       <recent name="E:\java\spring-boot\src\main\resources\templates\good" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTests.ooossoo">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.service.MD5Util" />
       <module name="spring-boot" />
@@ -155,7 +173,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.OOO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyPasswordEncoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.service.MyPasswordEncoder" />
+      <module name="spring-boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ce.springboot.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.Useruuu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot" />
       <extension name="coverage">
         <pattern>
@@ -165,13 +196,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.ce.springboot" />
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="OOO" />
+      <option name="METHOD_NAME" value="Useruuu" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.iiiccc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationTests.lofinini" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot" />
       <extension name="coverage">
         <pattern>
@@ -181,7 +212,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.ce.springboot" />
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="iiiccc" />
+      <option name="METHOD_NAME" value="lofinini" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,22 +234,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.ooosss" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ce.springboot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ce.springboot" />
-      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="ooosss" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ce.springboot.Application" />
@@ -228,11 +243,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.Useruuu" />
+        <item itemvalue="Application.MyPasswordEncoder" />
+        <item itemvalue="JUnit.ApplicationTests.lofinini" />
         <item itemvalue="JUnit.ApplicationTests.ooossoo" />
         <item itemvalue="Application.MD5Util" />
-        <item itemvalue="JUnit.ApplicationTests.ooosss" />
-        <item itemvalue="JUnit.ApplicationTests.iiiccc" />
-        <item itemvalue="JUnit.ApplicationTests.OOO" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +256,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:spring@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -306,10 +326,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="311" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/73.0.1293.768@73.0.1293.768" timestamp="1576412652403" />
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577014235487">
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577016631614">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577014235487" />
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577016631614" />
     <state x="449" y="159" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576997365910">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -334,38 +354,38 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1576938154242" />
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577014504541">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
-    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577014504541">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
-    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577014504541">
+    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
-    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577014504541">
+    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577014504541" />
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577014046243">
+    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
-    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577014046243">
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
-    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577014046243">
+    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
-    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577014046243">
+    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577020200959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577014046243" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577020200959" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1576412904930">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -398,10 +418,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="196" width="441" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/73.0.1293.768@73.0.1293.768" timestamp="1576507435160" />
-    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1576926313468">
+    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1577016903671">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/73.0.1293.768@73.0.1293.768" timestamp="1576926313468" />
+    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/73.0.1293.768@73.0.1293.768" timestamp="1577016903671" />
     <state x="400" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1576937668805">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -418,10 +438,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="420" y="1" key="refactoring.ChangeSignatureDialog/73.0.1293.768@73.0.1293.768" timestamp="1576913895481" />
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576845180499">
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577017697959">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1576845180499" />
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1577017697959" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

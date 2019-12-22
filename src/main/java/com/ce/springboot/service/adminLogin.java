@@ -14,14 +14,15 @@ public class adminLogin {
     private AdminuserDao adminuserDao;
     @RequestMapping("/userLogin")
     public String login(Model model, @RequestParam("username") String useradmin,@RequestParam("password") String password){
-        Adminuser adminuser = adminuserDao.selectLogin(useradmin, password);
-        if (adminuser != null) {
+        Adminuser adminuser = adminuserDao.selectByUsername(useradmin);
+        String pwd = new MyPasswordEncoder().encode(password);
+//        System.out.println(pwd);
+        if (pwd.equals(adminuser.getPassword())) {
+//        if(adminuser != null){
             return "backboard";
         }else{
             model.addAttribute("msg","登陆失败");
             return "login";
         }
-
-
     }
 }

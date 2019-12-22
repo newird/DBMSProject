@@ -22,6 +22,8 @@ class ApplicationTests {
 		@Autowired
 		private GoodDao goodDao;
 		@Autowired
+		private AdminuserDao adminuserDao;
+		@Autowired
 		private ClientDao clientDao;
 		@Autowired
 		private ContactmanDao contactmanDao;
@@ -86,8 +88,20 @@ class ApplicationTests {
 			int i = orderDao2.insert(order2);
 			System.out.println("i = " + i);
 		}
-		
 
+
+		@Test
+	public void lofinini(){
+			Adminuser admin = adminuserDao.selectByUsername("admin");
+			System.out.println("admin = " + admin);
+		}
+
+		@Test
+	public void Useruuu(){
+			Adminuser user = adminuserDao.selectByUsername("admin");
+			System.out.println(user.getPerm());
+			System.out.println(user.getPassword());
+		}
 }
 
 

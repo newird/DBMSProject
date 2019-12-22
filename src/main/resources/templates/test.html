@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <title>test</title>
@@ -8,8 +9,10 @@
  <!--/*@thymesVar id="msg" type="com.ce.springboot.controller.IndexController"*/-->
 <!-- <div th:text="${o}"></div>-->
 <!--<div th:text="${orders}"></div>-->
-<div th:text="${o}"></div>
-<div th:text="${g}"></div>
+ <button class="btn" ><a th:href="@{/logout}">注销</a></button>
+ <a sec:authorize="hasRole('base')" th:href="@{/order/add}">order</a>
+ <a sec:authorize="hasRole('check')" th:href="@{/good/add}">good</a>
+ <a sec:authorize="hasRole('service')" th:href="@{/client/add}">client</a>
 <p>hello</p>
 </body>
 </html>
