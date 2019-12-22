@@ -24,4 +24,6 @@ public interface AdminuserDao {
     int updateByPrimaryKeySelectiveUser(Adminuser record);
 
     int updateByPrimaryKeyUser(Adminuser record);
+
+    Adminuser selectByUsername(String username);
 }

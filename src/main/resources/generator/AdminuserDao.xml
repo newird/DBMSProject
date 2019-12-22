@@ -23,6 +23,12 @@
     from adminuser
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByUsername" parameterType="java.lang.Integer" resultMap="AdminuserMap">
+    select
+    <include refid="Base_Column_List" />
+    from adminuser
+    where adminuser.adminUser = #{username,jdbcType=INTEGER}
+  </select>
 
 
   <delete id="deleteByPrimaryKeyUser" parameterType="java.lang.Integer">

@@ -78,12 +78,12 @@
                                         </thead>
                                         <tbody>
                                         <tr >
-                                            <td th:text="${o.getOrder().getOrderid()}"></td>
+                                            <td th:text="${o.getOrderid()}"></td>
                                             <td th:text="${o.getClient().getNamezh()}"></td>
-                                            <td th:text="${o.getOrder().getSend()}"></td>
-                                            <td th:text="${o.getOrder().getSphone()}"></td>
-                                            <td th:text="${o.getOrder().getSemail()}"></td>
-                                            <td th:text="${o.getOrder().getSprovince()+' ' + o.getOrder().getScity()}"></td>
+                                            <td th:text="${o.getSend()}"></td>
+                                            <td th:text="${o.getSphone()}"></td>
+                                            <td th:text="${o.getSemail()}"></td>
+                                            <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
 
                                         </tr>
 
@@ -99,26 +99,29 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td th:text="${o.getOrder().getReceive()}"></td>
-                                                <td th:text="${o.getOrder().getRphone()}"></td>
-                                                <td th:text="${o.getOrder().getRemail()}"></td>
-                                                <td th:text="${o.getOrder().getRprovince()+' ' + o.getOrder().getRcity()}"></td>
-                                                <td th:text="${o.getOrder().getTime()}"></td>
+                                                <td th:text="${o.getReceive()}"></td>
+                                                <td th:text="${o.getRphone()}"></td>
+                                                <td th:text="${o.getRemail()}"></td>
+                                                <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                <td th:text="${o.getTime()}"></td>
                                             </tr>
                                         </tbody>
                                         <thead >
                                             <tr >
                                                 <td>货物名</td>
-                                                <td>质量</td>
                                                 <td>数量</td>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="g:${o.getGood()}">
-                                            <td th:text="${g.getName()}"></td>
-                                            <td th:text="${g.getMass()}"></td>
-                                            <td th:text="${o.getNum()}"></td>
+                                        <tr >
+                                            <span th:each="g:${o.getGoods()}">
+                                             <td  th:text="${g.getName()}"></td>
+                                            </span>
+                                            <span th:each="n:${o.getNum()}">
+                                                <td  th:text="${n}"></td>
+                                            </span>
                                         </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
