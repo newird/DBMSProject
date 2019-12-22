@@ -36,8 +36,11 @@ public class Good implements Serializable {
     private Integer height;
 
     private String unit;
-    public int getGoodId(){
-        return goodid;
+    public Good(String name){
+        this.name = name;
+    }
+    public String  getGoodId(){
+        return String.valueOf(goodid);
     }
 
 

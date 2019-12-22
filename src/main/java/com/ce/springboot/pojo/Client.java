@@ -53,6 +53,9 @@ public class Client  {
                 ", contactman=" + contactman +
                 '}';
     }
+    public Client(String namezh){
+        this.namezh = namezh;
+    }
 
     public Client(String namezh, String nameen, String namesp,
                   String email, String blankid, String blank,

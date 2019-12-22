@@ -62,6 +62,30 @@ public class Order implements Serializable {
         this.time = time;
         this.check = check;
     }
+    public Order(){}
+    public Order(String orderid, String send, String sphone,
+                 String semail, String sprovince, String scity,
+                 String receive, String rphone, String remail,
+                 String rprovince, String rcity, Date time,
+                 String check, Client client, List<Integer> num,
+                 List<Good> goods) {
+        this.orderid = orderid;
+        this.send = send;
+        this.sphone = sphone;
+        this.semail = semail;
+        this.sprovince = sprovince;
+        this.scity = scity;
+        this.receive = receive;
+        this.rphone = rphone;
+        this.remail = remail;
+        this.rprovince = rprovince;
+        this.rcity = rcity;
+        this.time = time;
+        this.check = check;
+        this.client = client;
+        this.num = num;
+        this.goods = goods;
+    }
 
     public String getOrderid() {
         return orderid;
