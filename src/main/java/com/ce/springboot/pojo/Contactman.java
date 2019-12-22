@@ -44,6 +44,58 @@ public class Contactman {
                 '}';
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Integer getTax() {
+        return tax;
+    }
+
+    public void setTax(Integer tax) {
+        this.tax = tax;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getEmployeeid() {
+        return employeeid;
+    }
+
+    public void setEmployeeid(Integer employeeid) {
+        this.employeeid = employeeid;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public int getCompany() {
         return company;
     }

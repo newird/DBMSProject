@@ -36,14 +36,21 @@ class ApplicationTests {
 		}
 
 
+
 		@Test
-		public void Con(){
-			List<Client> clients = clientDao.select();
+	public void OO(){
+			List<Good> goods = goodDao.selectAllGood();
+			for (Good good : goods) {
+				System.out.println("good = " + good);
+			}
+		}
+		@Test
+		public void OOO(){
+			List<Client> clients = clientDao.selectClient();
 			for (Client client : clients) {
 				System.out.println("client = " + client);
 			}
 		}
-
 }
 
 

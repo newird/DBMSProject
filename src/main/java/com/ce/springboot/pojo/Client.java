@@ -1,8 +1,6 @@
 package com.ce.springboot.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -11,8 +9,6 @@ import java.util.List;
  * @author 
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Client  {
     private String namezh;
 
@@ -33,7 +29,7 @@ public class Client  {
     private String city;
 
     private List<Contactman> contactman;
-
+    public Client(){}
     @Override
     public String toString() {
         return "Client{" +
@@ -52,40 +48,89 @@ public class Client  {
 
     private static final long serialVersionUID = 1L;
 
+    public Client(String namezh, String nameen, String namesp, String email, String blankid, String blank, Integer companycode, String province, String city, List<Contactman> contactman) {
+        this.namezh = namezh;
+        this.nameen = nameen;
+        this.namesp = namesp;
+        this.email = email;
+        this.blankid = blankid;
+        this.blank = blank;
+        this.companycode = companycode;
+        this.province = province;
+        this.city = city;
+        this.contactman = contactman;
+    }
+
     public String getNamezh() {
         return namezh;
+    }
+
+    public void setNamezh(String namezh) {
+        this.namezh = namezh;
     }
 
     public String getNameen() {
         return nameen;
     }
 
+    public void setNameen(String nameen) {
+        this.nameen = nameen;
+    }
+
     public String getNamesp() {
         return namesp;
+    }
+
+    public void setNamesp(String namesp) {
+        this.namesp = namesp;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getBlankid() {
         return blankid;
+    }
+
+    public void setBlankid(String blankid) {
+        this.blankid = blankid;
     }
 
     public String getBlank() {
         return blank;
     }
 
+    public void setBlank(String blank) {
+        this.blank = blank;
+    }
+
     public Integer getCompanycode() {
         return companycode;
+    }
+
+    public void setCompanycode(Integer companycode) {
+        this.companycode = companycode;
     }
 
     public String getProvince() {
         return province;
     }
 
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
     public String getCity() {
         return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public List<Contactman> getContactman() {
@@ -96,17 +141,7 @@ public class Client  {
         this.contactman = contactman;
     }
 
-    public Client(String namezh, String nameen, String namesp, String email, String blankid, String blank, Integer companycode, String province, String city) {
-        this.namezh = namezh;
-        this.nameen = nameen;
-        this.namesp = namesp;
-        this.email = email;
-        this.blankid = blankid;
-        this.blank = blank;
-        this.companycode = companycode;
-        this.province = province;
-        this.city = city;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
-
-
 }
