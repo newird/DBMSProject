@@ -19,13 +19,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/css/**", "/js/**","/scss/**",
-                         "/fonts/**", "/images/**").permitAll()
-                .antMatchers("/good/**","/client/**").hasRole("base")
-                .antMatchers("/goods","/clients").hasRole("base")
-                .antMatchers("/orders").hasRole("base")
-                .antMatchers("/users").hasRole("base")
+                .antMatchers("/css/**", "/js/**", "/scss/**",
+                        "/fonts/**", "/images/**").permitAll()
+                .antMatchers("/good/**", "/client/**").hasRole("base")
+                .antMatchers("/goods", "/clients").hasRole("base")
                 .antMatchers("/order/**").hasRole("service")
+                .antMatchers("/orders").hasRole("base")
+                .antMatchers("/users").hasRole("admin")
                 .antMatchers("/").permitAll();
         //没有权限，默认登陆
         http.formLogin().loginPage("/login");
@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //菜单根据角色动态显示，写在前端
 
     }
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(new MyPasswordEncoder());
@@ -48,13 +49,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .inMemoryAuthentication()
 //                .withUser("admin").password("123456").roles("base");
     }
-    //认证
-    //要加密 不能明文
-
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth
-//                .inMemoryAuthentication()
-//                .withUser("admin").password("123456").roles("base");
-//    }
 }

@@ -11,8 +11,8 @@
 <!--<div th:text="${orders}"></div>-->
  <button class="btn" ><a th:href="@{/logout}">注销</a></button>
  <a sec:authorize="hasRole('base')" th:href="@{/order/add}">order</a>
- <a sec:authorize="hasRole('check')" th:href="@{/good/add}">good</a>
- <a sec:authorize="hasRole('service')" th:href="@{/client/add}">client</a>
+ <a  th:href="@{/good/add}">good</a>
+ <a  th:href="@{/client/add}">client</a>
 <p>hello</p>
 </body>
 </html>

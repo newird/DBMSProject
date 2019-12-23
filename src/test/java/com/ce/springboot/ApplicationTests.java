@@ -2,6 +2,7 @@ package com.ce.springboot;
 
 import com.ce.springboot.dao.*;
 import com.ce.springboot.pojo.*;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -102,6 +103,25 @@ class ApplicationTests {
 			System.out.println(user.getPerm());
 			System.out.println(user.getPassword());
 		}
+
+
+		@Test
+	public void mmmm() {
+
+			Adminuser user = adminuserDao.selectByUsername("admin");
+
+				if (StringUtils.isNotBlank(user.getPerm())) {
+					String[] roles = user.getPerm().split(",");
+					for (String role : roles) {
+						if (StringUtils.isNotBlank(role)) {
+//							authorities.add(new SimpleGrantedAuthority(role.trim()));
+							System.out.println("role = " + role.trim());
+
+						}
+					}
+				}
+			}
+
 }
 
 
