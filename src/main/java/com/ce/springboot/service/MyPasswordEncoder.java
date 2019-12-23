@@ -15,7 +15,5 @@ public class MyPasswordEncoder implements PasswordEncoder {
         return encodedPassword.equals(MD5Util.encode((String) rawPassword));
     }
 
-    public static void main(String[] args) {
-        System.out.println(new MyPasswordEncoder().encode("123456").length());
-    }
+
 }

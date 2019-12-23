@@ -36,9 +36,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insertUser" keyColumn="id" keyProperty="id" parameterType="com.ce.springboot.pojo.Adminuser" useGeneratedKeys="true">
-    insert into adminuser (adminUser, `password`, perm
+    insert into adminuser (`id`,adminUser, `password`, perm
       )
-    values (#{adminuser,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{perm,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER},#{adminuser,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{perm,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelectiveUser" keyColumn="id" keyProperty="id" parameterType="com.ce.springboot.pojo.Adminuser" useGeneratedKeys="true">
