@@ -78,4 +78,15 @@ public class orderController {
         orderDao2.deleteByPrimaryKey(id);
         return "redirect:/orders";
     }
+
+    @GetMapping("/delog/{id}")
+
+    public String deleteog(@PathVariable("id")String id){
+        String orderId = id.substring(0,8);
+        String goodId = id.substring(8);
+
+        orderGoodDao.deleteByKey(orderId,Integer.parseInt(goodId));
+
+        return "redirect:/orders";
+    }
 }

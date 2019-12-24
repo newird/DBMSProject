@@ -6,6 +6,10 @@
     <result column="goodID" jdbcType="INTEGER" property="goodid" />
     <result column="num" jdbcType="INTEGER" property="num" />
   </resultMap>
+ <parameterMap id="Key" type="com.ce.springboot.pojo.OrderGoodKey">
+   <parameter property="orderId" javaType="java.lang.String"/>
+   <parameter property="goodId" javaType="int" jdbcType="INTEGER"/>
+ </parameterMap>
   <insert id="insert" parameterType="com.ce.springboot.pojo.OrderGood">
     insert into order_good (orderID, goodID, num
       )
@@ -47,5 +51,9 @@
   <delete id="deleteOrderById" parameterType="java.lang.String">
     delete  from `order_good`
     where orderID = #{id};
+  </delete>
+  <delete id="deleteByKey" parameterType="java.lang.String" parameterMap="Key">
+    delete  from `order_good`
+    where orderID = #{orderId} and goodID = #{goodId}
   </delete>
 </mapper>

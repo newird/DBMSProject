@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Date;
 import java.util.UUID;
@@ -31,5 +32,20 @@ public class TestController {
         order.setTime(new Date());
         model.addAttribute("o",order);
         return "test";
+    }
+    @RequestMapping("/order/add")
+
+    public String adfhn(){
+        return "order/add";
+    }
+    @RequestMapping("/good/add")
+
+    public String adfhnaa(){
+        return "good/add";
+    }
+    @RequestMapping("/client/add")
+
+    public String adfhnww(){
+        return "client/add";
     }
 }

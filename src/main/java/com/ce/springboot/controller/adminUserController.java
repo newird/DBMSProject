@@ -43,6 +43,7 @@ public class adminUserController {
     public String Updateuser(Adminuser user){
         String password = user.getPassword();
         password = new BCryptPasswordEncoder().encode(password);
+        password = "{bcrypt}"+password;
         user.setPassword(password);
        adminuserDao.updateByPrimaryKeySelectiveUser(user);
         return "redirect:/users";
@@ -55,6 +56,7 @@ public class adminUserController {
     public String addUser(Adminuser user){
         String password = user.getPassword();
         password = new BCryptPasswordEncoder().encode(password);
+        password = "{bcrypt}"+password;
         user.setPassword(password);
         adminuserDao.insertSelectiveUser(user);
         return "redirect:/users";

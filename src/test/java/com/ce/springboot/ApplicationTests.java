@@ -145,6 +145,12 @@ class ApplicationTests {
 		String pwd = new BCryptPasswordEncoder().encode("1");
 		System.out.println("pwd = " + pwd);
 	}
+
+	@Test
+    public void sdfoasd(){
+        int sf12312 = orderGoodDao.deleteByKey("sf12312", 4);
+        System.out.println("sf12312 = " + sf12312);
+    }
 }
 
 

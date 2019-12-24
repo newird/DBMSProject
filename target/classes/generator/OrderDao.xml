@@ -24,13 +24,14 @@
         </collection>
         <collection property="goods" ofType="com.ce.springboot.pojo.Good">
             <result property="name" column="gname"/>
+            <result property="goodid" column="gid"/>
         </collection>
     </resultMap>
 
     <select id="selectOrder" resultMap="OrderMap" >
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID

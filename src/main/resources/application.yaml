@@ -22,3 +22,4 @@ logging:
   pattern:
     dateformat: yyyy-MM-dd
 #    poolPreparedStatements: true
+

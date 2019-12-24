@@ -18,4 +18,6 @@ public interface OrderGoodDao {
     List<Integer> order2num(String orderId);
 
     int deleteOrderById(String id);
+
+    int deleteByKey(String orderId,int goodId);
 }
