@@ -58,8 +58,8 @@ public class clientController {
     @PostMapping("/addClient")
     public String clientadd(Client client , Contactman contactman,Model model){
         clientDao.insertClient(client);
-//        contactman.setCompany(client.getCompanycode());
-//        contactmanDao.insert(contactman);
+        contactman.setCompany(client.getCompanycode());
+        contactmanDao.insert(contactman);
         return "redirect:clients";
     }
 
