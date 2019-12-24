@@ -52,7 +52,7 @@
     delete  from `order_good`
     where orderID = #{id};
   </delete>
-  <delete id="deleteByKey" parameterType="java.lang.String" parameterMap="Key">
+  <delete id="deleteByKey" parameterMap="Key">
     delete  from `order_good`
     where orderID = #{orderId} and goodID = #{goodId}
   </delete>

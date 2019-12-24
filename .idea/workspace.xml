@@ -2,29 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/order/addGood.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/order/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/clientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/clientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/OrderDao2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/OrderDao2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/ClientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/ClientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/OrderDao2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/OrderDao2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client/clientList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client/clientList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/good/goodList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/good/goodList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/clientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/clientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/ClientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/OrderDao2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/OrderDao2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/ClientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/ClientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/OrderDao2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/OrderDao2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/client/clientList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/client/clientList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/good/goodList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/good/goodList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +288,7 @@
       <workItem from="1577085685775" duration="17805000" />
       <workItem from="1577108495339" duration="577000" />
       <workItem from="1577110250469" duration="5574000" />
-      <workItem from="1577157222117" duration="19688000" />
+      <workItem from="1577157222117" duration="20025000" />
     </task>
     <servers />
   </component>
@@ -368,38 +348,38 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1577173869747" />
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577187066191">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577187066191" />
+    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577187066190">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
-    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577186526868">
+    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577187066190" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577187066191">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577186526868" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577187066191" />
     <state width="1250" height="392" key="GridCell.Tab.2.bottom" timestamp="1577108278519">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
