@@ -43,10 +43,10 @@
 <div class="container"></div>
 <form th:action="@{/addUser}" method="post" class="col-6 col-offset-2 center-block">
 
-    <label>名称</label><input name="adminuser" type="text" class="required">
-    <label>密码</label><input name="password" type="text"><br>
+    <label>名称</label><input name="adminuser" type="text" required="required">
+    <label>密码</label><input name="password" type="text" required="required"><br>
     <label>权限</label>
-    <select name="perm">
+    <select name="perm" required="required">
         <option value="ROLE_admin,ROLE_base,ROLE_service,ROLE_check"> 管理员</option>
         <option value="ROLE_base">基础管理员</option>
         <option value="ROLE_service">客服</option>

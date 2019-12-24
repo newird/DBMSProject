@@ -51,7 +51,7 @@
       )
   </insert>
   <insert id="insertSelective" keyColumn="orderId" keyProperty="orderid" parameterType="com.ce.springboot.pojo.Order2" useGeneratedKeys="true">
-    insert into order
+    insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="client != null">
         client,
@@ -136,7 +136,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.ce.springboot.pojo.Order2">
-    update order
+    update `order`
     <set>
       <if test="client != null">
         client = #{client,jdbcType=INTEGER},
@@ -181,7 +181,7 @@
     where orderId = #{orderid,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ce.springboot.pojo.Order2">
-    update order
+    update `order`
     set client = #{client,jdbcType=INTEGER},
       send = #{send,jdbcType=VARCHAR},
       sphone = #{sphone,jdbcType=CHAR},
@@ -198,7 +198,7 @@
     where orderId = #{orderid,jdbcType=CHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ce.springboot.pojo.Order2">
-    update order
+    update `order`
     set client = #{client,jdbcType=INTEGER},
       send = #{send,jdbcType=VARCHAR},
       sphone = #{sphone,jdbcType=CHAR},

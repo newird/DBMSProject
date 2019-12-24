@@ -7,15 +7,15 @@
 </head>
 <body>
 <form th:action="@{/updateClient}" method="post">
-    公司名         <input type="text" name="namezh" th:value="${client.getNamezh()}"><br>
-    英文名         <input type="text" name="nameen" th:value="${client.getNameen()}"><br>
-    公司简称       <input type="text" name="namesp" th:value="${client.getNamesp()}"><br>
-    e-mail         <input type="text" name="email" th:value="${client.getEmail()}"><br>
-    银行卡号        <input type="text" name="blankid" th:value="${client.getBlankid()}"><br>
-    所在银行        <input type="text" name="blank" th:value="${client.getBlank()}"><br>
-    公司代码        <input type="text" name="companycode" th:value="${client.getCompanycode()}"><br>
-    省               <input type="text" name="province" th:value="${client.getProvince()}"><br>
-    市             <input type="text" name="city" th:value="${client.getCity()}"><br>
+    公司名         <input required="required" type="text" name="namezh" th:value="${client.getNamezh()}"><br>
+    英文名         <input required="required" type="text" name="nameen" th:value="${client.getNameen()}"><br>
+    公司简称       <input required="required" type="text" name="namesp" th:value="${client.getNamesp()}"><br>
+    e-mail         <input required="required" type="text" name="email" th:value="${client.getEmail()}"><br>
+    银行卡号        <input required="required" type="text" name="blankid" th:value="${client.getBlankid()}"><br>
+    所在银行        <input required="required" type="text" name="blank" th:value="${client.getBlank()}"><br>
+    公司代码        <input required="required" type="text" name="companycode" th:value="${client.getCompanycode()}"><br>
+    省               <input required="required" type="text" name="province" th:value="${client.getProvince()}"><br>
+    市             <input required="required" type="text" name="city" th:value="${client.getCity()}"><br>
 <!--                  <select id="cmbProvince" name="province" ></select>-->
 <!--                   <select id="cmbCity" name="city" ></select>-->
     <input type="submit" class="btn">

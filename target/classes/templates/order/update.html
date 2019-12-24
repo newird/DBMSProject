@@ -13,12 +13,12 @@
         </div>
     </select><br>
         寄件人<input type="text" name="send" th:value="${order.getSend()}"><br>
-        寄件人电话<input type="tel" name="sphone" th:value="${order.getSphone()}"><br>
+        寄件人电话<input type="tel" pattern="^1\d{10}$"  name="sphone" th:value="${order.getSphone()}"><br>
         寄件人邮箱<input type="email" name="semail" th:value="${order.getSemail()}"><br>
         寄件省<input type="text" name="sprovince" th:value="${order.getSprovince()}">
         市<input type="text" name="scity" th:value="${order.getScity()}"><br>
         收件人<input type="text" name="receive" th:value="${order.getReceive()}"><br>
-        收件人电话<input type="tel" name="rphone" th:value="${order.getSphone()}"><br>
+        收件人电话<input type="tel" pattern="^1\d{10}$" name="rphone" th:value="${order.getSphone()}"><br>
         收件人邮箱<input type="email" name="remail" th:value="${order.getRemail()}"><br>
         收件人省<input type="text" name="rprovince" th:value="${order.getRprovince()}">
         市<input type="text" name="rcity" th:value="${order.getRcity()}"><br>

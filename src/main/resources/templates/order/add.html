@@ -7,27 +7,26 @@
 <body>
 <script th:src="@{js/vue.js}"></script>
 <form th:action="@{/addOrder}" method="post">
-    客户公司<select name="client">
+    客户公司<select name="client" required="required">
     <div th:each="c:${clients}">
         <option th:value="${c.getCompanycode()}" th:text="${c.getNamezh()}"></option>
     </div>
 </select><br>
-    寄件人<input type="text" name="send"><br>
-    寄件人电话<input type="tel" name="sphone"><br>
-    寄件人邮箱<input type="email" name="semail"><br>
-    寄件省<input type="text" name="sprovince">
-    市<input type="text" name="scity"><br>
-    收件人<input type="text" name="receive"><br>
-    收件人电话<input type="tel" name="rphone"><br>
-    收件人邮箱<input type="email" name="remail"><br>
-    收件人省<input type="text" name="rprovince">
-    市<input type="text" name="rcity"><br>
-    <div id="app">
-        货物<select name="goodid">
+    寄件人<input type="text" name="send" required="required"><br>
+    寄件人电话<input type="tel" name="sphone" required="required" pattern="^1\d{10}$"><br>
+    寄件人邮箱<input type="email" name="semail" required="required"><br>
+    寄件省<input type="text" name="sprovince" required="required">
+    市<input type="text" name="scity" required="required"><br>
+    收件人<input type="text" name="receive" required="required"><br>
+    收件人电话<input type="tel" name="rphone" required="required" pattern="^1\d{10}$"><br>
+    收件人邮箱<input type="email" name="remail" required="required"><br>
+    收件人省<input type="text" name="rprovince" required="required">
+    市<input type="text" name="rcity" required="required"><br>
+        货物<select name="goodid" required="required">
         <div th:each="g:${goods}">
             <option th:value="${g.getGoodId()}" th:text="${g.getName()}"></option>
         </div>
-    </select> 数量<input type="number" name="num"> 货物<select name="goodid">
+    </select> 数量<input type="number" name="num" required="required">
     <button type="submit">提交</button>
 </form>
 
