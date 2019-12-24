@@ -213,4 +213,9 @@
       `time` = #{time,jdbcType=DATE}
     where orderId = #{orderid,jdbcType=CHAR}
   </update>
+  <update id="check" parameterType="java.lang.String">
+    update `order`
+    set `check` = '审核'
+    where orderId = #{id,jdbcType=CHAR}
+  </update>
 </mapper>

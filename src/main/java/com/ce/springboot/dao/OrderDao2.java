@@ -20,4 +20,6 @@ public interface OrderDao2 {
     int updateByPrimaryKeyWithBLOBs(Order2 record);
 
     int updateByPrimaryKey(Order2 record);
+
+    int check(String id);
 }

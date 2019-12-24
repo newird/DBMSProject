@@ -119,6 +119,15 @@
                                                         <td th:text="${o.getRemail()}"></td>
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
+                                                        <td>
+                                                            <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-success" th:href="@{/orderCheck/}+${o.getOrderid()}">审核</a>
+                                                        </td>
                                                     </tr>
                                                     <td>
                                                         <table>
@@ -191,6 +200,7 @@
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
+
                                                     </tr>
                                                     <td>
                                                         <table>
