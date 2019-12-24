@@ -48,4 +48,9 @@ public class TestController {
     public String adfhnww(){
         return "client/add";
     }
+
+    @RequestMapping("/address")
+    public String address(){
+        return "address";
+    }
 }

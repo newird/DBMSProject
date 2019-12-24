@@ -122,6 +122,7 @@
                                                         <a class="btn btn-sm btn-primary"
                                                            th:href="@{/updateClient/}+${cm.getEmployeeid()}">编辑</a>
                                                     </td>
+
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -134,6 +135,10 @@
                                         <td>
                                             <a class="btn btn-sm btn-primary"
                                                th:href="@{/updateCon/}+${c.getCompanycode()}">编辑</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-primary"
+                                               th:href="@{/addCon/}+${c.getCompanycode()}">添加联系人</a>
                                         </td>
                                     </tr>
 

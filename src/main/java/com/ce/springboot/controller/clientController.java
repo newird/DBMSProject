@@ -3,6 +3,7 @@ package com.ce.springboot.controller;
 import com.ce.springboot.dao.ClientDao;
 import com.ce.springboot.dao.ContactmanDao;
 import com.ce.springboot.pojo.Client;
+import com.ce.springboot.pojo.Contactman;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,19 +56,30 @@ public class clientController {
         return "client/add";
     }
     @PostMapping("/addClient")
-    public String clientadd(Client client ,Model model){
-        int i = clientDao.insertClient(client);
-        if(i == 1){
-            return "redirect:clients";
-        }else{
-            return "client/add";
-        }
+    public String clientadd(Client client , Contactman contactman,Model model){
+        clientDao.insertClient(client);
+//        contactman.setCompany(client.getCompanycode());
+//        contactmanDao.insert(contactman);
+        return "redirect:clients";
     }
 
     @PostMapping("/searchClient?search={search}")
     public String searchClient(Model model, String search){
         List<Client> client = clientDao.searchClient(search);
         model.addAttribute("client",client);
+        return "redirect:/clients";
+    }
+    @GetMapping("/addCon/{id}")
+
+    public String addComman(@PathVariable("id") int id){
+        this.id = id;
+        return "contactman/add";
+    }
+    @PostMapping("/addCom")
+
+    public String addCommanmmnn(Contactman contactman){
+        contactman.setCompany(id);
+        contactmanDao.insert(contactman);
         return "redirect:/clients";
     }
 }
