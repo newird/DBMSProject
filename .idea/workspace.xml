@@ -7,20 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c92c0b27-f7d9-4384-9685-f3e9c68ff251.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c92c0b27-f7d9-4384-9685-f3e9c68ff251.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/clientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/clientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/ClientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/ClientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/ContactmanDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/ContactmanDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client/clientList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client/clientList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contactman/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contactman/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contactman/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contactman/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/clientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/clientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/ClientDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/ClientDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/ContactmanDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/ContactmanDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/client/clientList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/client/clientList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/contactman/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/contactman/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/address.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/address.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/client/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/client/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,14 +67,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="client: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -312,7 +303,7 @@
       <workItem from="1577085685775" duration="17805000" />
       <workItem from="1577108495339" duration="577000" />
       <workItem from="1577110250469" duration="5574000" />
-      <workItem from="1577157222117" duration="31651000" />
+      <workItem from="1577157222117" duration="32654000" />
     </task>
     <servers />
   </component>
@@ -376,38 +367,38 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1577173869747" />
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom" timestamp="1577199654344">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577199654344" />
+    <state width="1250" height="373" key="GridCell.Tab.0.center" timestamp="1577199654344">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577199654344" />
+    <state width="1250" height="373" key="GridCell.Tab.0.left" timestamp="1577199654344">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577199654344" />
+    <state width="1250" height="373" key="GridCell.Tab.0.right" timestamp="1577199654344">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577199654344" />
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom" timestamp="1577199654345">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577199654345" />
+    <state width="1250" height="373" key="GridCell.Tab.1.center" timestamp="1577199654345">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577199654345" />
+    <state width="1250" height="373" key="GridCell.Tab.1.left" timestamp="1577199654345">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
-    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577198400474">
+    <state width="1250" height="373" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577199654345" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right" timestamp="1577199654345">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577198400474" />
+    <state width="1250" height="373" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577199654345" />
     <state width="1250" height="392" key="GridCell.Tab.2.bottom" timestamp="1577108278519">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -456,10 +447,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="196" width="441" height="351" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/73.0.1293.768@73.0.1293.768" timestamp="1576507435160" />
-    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1577178380671">
+    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1577199675992">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/73.0.1293.768@73.0.1293.768" timestamp="1577178380671" />
+    <state x="435" y="23" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/73.0.1293.768@73.0.1293.768" timestamp="1577199675992" />
     <state x="373" y="157" key="com.intellij.ide.util.TipDialog" timestamp="1577157251252">
       <screen x="73" y="0" width="1293" height="768" />
     </state>

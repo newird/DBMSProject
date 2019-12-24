@@ -4,20 +4,18 @@ package com.ce.springboot.controller;/*
  *编码时间: 2019/12/11 0011
  */
 
-import com.ce.springboot.pojo.Order;
+import com.ce.springboot.pojo.Client;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Date;
-import java.util.UUID;
-
 @Controller
 public class TestController {
     @GetMapping("/test")
-    public String hello(){
+    public String hello(Client client,Model model){
+        model.addAttribute("client",client);
         return "test";
     }
 //   @PostMapping("/test1")
@@ -27,10 +25,11 @@ public class TestController {
 //        return "test";
 //   }
     @PostMapping("/test")
-    public String post(Order order, Model model){
-        order.setOrderid(UUID.randomUUID().toString().replaceAll("-","").substring(2, 10));
-        order.setTime(new Date());
-        model.addAttribute("o",order);
+    public String post(Client client, Model model){
+//        order.setOrderid(UUID.randomUUID().toString().replaceAll("-","").substring(2, 10));
+////        order.setTime(new Date());
+////        model.addAttribute("o",order);
+        model.addAttribute("client",client);
         return "test";
     }
     @RequestMapping("/order/add")
