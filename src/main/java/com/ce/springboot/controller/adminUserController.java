@@ -2,8 +2,8 @@ package com.ce.springboot.controller;
 
 import com.ce.springboot.dao.AdminuserDao;
 import com.ce.springboot.pojo.Adminuser;
-import com.ce.springboot.service.MyPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +42,7 @@ public class adminUserController {
     @PostMapping("/userUpdate")
     public String Updateuser(Adminuser user){
         String password = user.getPassword();
-        password = new MyPasswordEncoder().encode(password);
+        password = new BCryptPasswordEncoder().encode(password);
         user.setPassword(password);
        adminuserDao.updateByPrimaryKeySelectiveUser(user);
         return "redirect:/users";
@@ -54,7 +54,7 @@ public class adminUserController {
     @PostMapping("/addUser")
     public String addUser(Adminuser user){
         String password = user.getPassword();
-        password = new MyPasswordEncoder().encode(password);
+        password = new BCryptPasswordEncoder().encode(password);
         user.setPassword(password);
         adminuserDao.insertSelectiveUser(user);
         return "redirect:/users";

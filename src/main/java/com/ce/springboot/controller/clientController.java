@@ -29,6 +29,7 @@ public class clientController {
     @GetMapping("delClient/{id}")
     public String toDel(@PathVariable("id") Integer id){
         clientDao.deleteClientById(id);
+        contactmanDao.deleteByCompany(id);
         return "redirect:/clients";
     }
     @GetMapping("/updateClient/{id}")

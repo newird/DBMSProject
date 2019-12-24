@@ -26,4 +26,12 @@ public interface ContactmanDao {
     List<Client> getCompany();
 
     List<Contactman> getContactman();
+
+    int deleteByCompany(int  id);
+
+    int deleteById(int  id);
+
+    Contactman selectById(int id);
+
+    int updateById(Contactman contactman);
 }

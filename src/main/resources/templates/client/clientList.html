@@ -23,109 +23,144 @@
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Admin Pro</p>
-        </div>
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Admin Pro</p>
     </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
     <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- Topbar header - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <div th:insert="~{common::topbar}"></div>
+    <div th:insert="~{common::topbar}"></div>
 
-        <div th:insert="~{common::sidebar}"></div>
+    <div th:insert="~{common::sidebar}"></div>
 
-        <div class="page-wrapper">
+    <div class="page-wrapper">
 
-            <div class="container-fluid">
+        <div class="container-fluid">
 
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Table basic</h3>
-                    </div>
-                    <div class="col-md-7 align-self-center">
-                        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to Pro</a>
-                    </div>
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">Table basic</h3>
                 </div>
+                <div class="col-md-7 align-self-center">
+                    <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
+                        Pro</a>
+                </div>
+            </div>
 
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">客户信息表</h4>
-                                <h6 class="card-subtitle">Add class <code>客户</code></h6>
-                                <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th>中文名</th>
-                                            <th>英文名</th>
-                                            <th>简称</th>
-                                            <th>e-mail</th>
-                                            <th>银行卡</th>
-                                            <th>所在银行</th>
-                                            <th>公司代码</th>
-                                            <th>省</th>
-                                            <th>市</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-<!--                                        <div th:text="${clients}"></div>-->
-                                        <tr th:each="c:${clients}">
-                                            <td th:text="${c.getNamezh()}"></td>
-                                            <td th:text="${c.getNameen()}"></td>
-                                            <td th:text="${c.getNamesp()}"></td>
-                                            <td th:text="${c.getEmail()}"></td>
-                                            <td th:text="${c.getBlankid()}"></td>
-                                            <td th:text="${c.getBlank()}"></td>
-                                            <td th:text="${c.getCompanycode()}"></td>
-                                            <td th:text="${c.getProvince()}"></td>
-                                            <td th:text="${c.getCity()}"></td>
-                                            <td>
-                                                <a class="block btn btn-sm btn-danger" th:href="@{/delClient/}+${c.getCompanycode()}">删除</a>
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-sm btn-primary" th:href="@{/updateClient/}+${c.getCompanycode()}">编辑</a>
-                                            </td>
-                                        </tr>
+            <div class="row">
+                <!-- column -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">客户信息表</h4>
+                            <h6 class="card-subtitle">Add class <code>客户</code></h6>
+                            <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>中文名</th>
+                                        <th>英文名</th>
+                                        <th>简称</th>
+                                        <th>e-mail</th>
+                                        <th>银行卡</th>
+                                        <th>所在银行</th>
+                                        <th>公司代码</th>
+                                        <th>省</th>
+                                        <th>市</th>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!--                                        <div th:text="${clients}"></div>-->
+                                    <tr th:each="c:${clients}">
+                                        <td th:text="${c.getNamezh()}"></td>
+                                        <td th:text="${c.getNameen()}"></td>
+                                        <td th:text="${c.getNamesp()}"></td>
+                                        <td th:text="${c.getEmail()}"></td>
+                                        <td th:text="${c.getBlankid()}"></td>
+                                        <td th:text="${c.getBlank()}"></td>
+                                        <td th:text="${c.getCompanycode()}"></td>
+                                        <td th:text="${c.getProvince()}"></td>
+                                        <td th:text="${c.getCity()}"></td>
+                                        <td>
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>联系人</th>
+                                                    <th>身份</th>
+                                                    <th>邮箱</th>
+                                                    <th>电话</th>
+                                                    <th>职工号</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="cm:${c.getContactman()}">
+                                                    <td th:text="${cm.getName()}"></td>
+                                                    <td th:text="${cm.getTitle()}"></td>
+                                                    <td th:text="${cm.getEmail()}"></td>
+                                                    <td th:text="${cm.getPhone()}"></td>
+                                                    <td th:text="${cm.getEmployeeid()}"></td>
+                                                    <td>
+                                                        <a class="block btn btn-sm btn-danger"
+                                                           th:href="@{/delClient/}+${cm.getEmployeeid()}">删除</a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-sm btn-primary"
+                                                           th:href="@{/updateClient/}+${cm.getEmployeeid()}">编辑</a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+
+                                        <td>
+                                            <a class="block btn btn-sm btn-danger"
+                                               th:href="@{/delCon/}+${c.getCompanycode()}">删除</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-primary"
+                                               th:href="@{/updateCon/}+${c.getCompanycode()}">编辑</a>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
 
         </div>
 
+
     </div>
 
-    <script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
-    <script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
-    <!--Wave Effects -->
-    <script th:src="@{js/waves.js}"></script>
-    <!--Menu sidebar -->
-    <script th:src="@{js/sidebarmenu.js}"></script>
-    <!--Custom JavaScript -->
-    <script th:src="@{js/custom.min.js}"></script>
+</div>
+
+<script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{js/custom.min.js}"></script>
 </body>
 
 </html>

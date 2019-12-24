@@ -1,19 +1,15 @@
 package com.ce.springboot.controller;
 
-import com.ce.springboot.dao.ClientDao;
-import com.ce.springboot.dao.GoodDao;
-import com.ce.springboot.dao.OrderDao;
-import com.ce.springboot.dao.OrderGoodDao;
-import com.ce.springboot.pojo.Client;
-import com.ce.springboot.pojo.Good;
-import com.ce.springboot.pojo.Order;
-import com.ce.springboot.pojo.OrderGood;
+import com.ce.springboot.dao.*;
+import com.ce.springboot.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,33 +23,24 @@ public class orderController {
     private GoodDao goodDao;
     @Autowired
     private ClientDao clientDao;
+    @Autowired
+    private OrderDao2 orderDao2;
 
 
     @GetMapping("/orders")
     public String order(Model model){
-
-//        List<OrderResult> orderres = new ArrayList<>();
-//        List<Order> orders = orderDao.selectAll();
-//        OrderResult orderResult = null;
-//        for (Order order : orders) {
-//            orderResult = new OrderResult();
-//            orderResult.setOrder(order);
-//            int clientId = order.getClient();
-//            Client client = clientDao.selectById(clientId);
-//            orderResult.setClient(client);
-//            List<Integer> num = orderGoodDao.order2num(order.getOrderid());
-//            orderResult.setNum(num);
-//            List<Integer> goodsId = orderGoodDao.order2good(order.getOrderid());
-//            List<Good> goods = new ArrayList<>();
-//            for (Integer goodId : goodsId) {
-//                goods.add(goodDao.selectByPrimaryKey(goodId));
-//            }
-//            orderResult.setGood(goods);
-//            orderres.add(orderResult);
-//
-//        }
         List<Order> orders = orderDao.selectOrder();
-        model.addAttribute("orders",orders);
+        List<Order> check = new ArrayList<>();
+        List<Order> uncheck = new ArrayList<>();
+        for (Order order : orders) {
+            if (order.getCheck() != null) {
+                check.add(order);
+            }else{
+                uncheck.add(order);
+            }
+        }
+        model.addAttribute("orders",check);
+        model.addAttribute("uncheck",uncheck);
         return "order/orderList";
     }
 
@@ -66,16 +53,16 @@ public class orderController {
         return "order/add";
     }
     @PostMapping("/addOrder")
-    public String orderadd(Order order, OrderGood orderGood){
+    public String orderadd(Order2 order, OrderGood orderGood){
         String OrderId = UUID.randomUUID().toString().replaceAll("-","").substring(2, 10);
-//        order.setOrderid(OrderId);
-//        order.setTime(new Date());
-//        orderDao.insert(order);
+        order.setOrderid(OrderId);
+        order.setTime(new Date());
+        orderDao2.insert(order);
+//        for (OrderGood orderGood : orderGoods) {
             orderGood.setOrderid(OrderId);
-//        model.addAttribute("o",order);
-//        model.addAttribute("g",orderGood);
-//        orderDao.insert(order);
-//        orderGoodDao.insert(orderGood);
+            orderGoodDao.insert(orderGood);
+//        }
+
         return "redirect:/orders";
     }
 }

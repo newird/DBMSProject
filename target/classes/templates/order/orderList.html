@@ -23,132 +23,220 @@
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Admin Pro</p>
-        </div>
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Admin Pro</p>
     </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
     <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- Topbar header - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <div th:insert="~{common::topbar}"></div>
+    <div th:insert="~{common::topbar}"></div>
 
-        <div th:insert="~{common::sidebar}"></div>
+    <div th:insert="~{common::sidebar}"></div>
 
-        <div class="page-wrapper">
+    <div class="page-wrapper">
 
-            <div class="container-fluid">
+        <div class="container-fluid">
 
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Table basic</h3>
-                    </div>
-                    <div class="col-md-7 align-self-center">
-                        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to Pro</a>
-                    </div>
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">Table basic</h3>
                 </div>
+                <div class="col-md-7 align-self-center">
+                    <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
+                        Pro</a>
+                </div>
+            </div>
 
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Basic Table</h4>
-                                <h6 class="card-subtitle">Add class <code>order</code></h6>
-                                <h2><a class="btn btn-sm btn-success" th:href="@{/addOrder}">添加</a></h2>
-                                <div class="table-responsive">
-                                    <table class="table border-dark" th:each="o:${orders}" >
-                                        <thead>
-                                        <tr>
-                                            <th>订单号</th>
-                                            <th>客户</th>
-                                            <th>寄件人</th>
-                                            <th>寄件人电话</th>
-                                            <th>寄件人邮箱</th>
-                                            <th>寄出省市</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr >
-                                            <td th:text="${o.getOrderid()}"></td>
-                                            <td th:text="${o.getClient().getNamezh()}"></td>
-                                            <td th:text="${o.getSend()}"></td>
-                                            <td th:text="${o.getSphone()}"></td>
-                                            <td th:text="${o.getSemail()}"></td>
-                                            <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
+            <div class="row">
+                <!-- column -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Basic Table</h4>
+                            <h6 class="card-subtitle">Add class <code>order</code></h6>
+                            <h2><a class="btn btn-sm btn-success" th:href="@{/addOrder}">添加</a></h2>
+                            <div class="table-responsive">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                    未审核
+                                                </button>
+                                            </h2>
+                                        </div>
 
-                                        </tr>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                             data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <table class="table border-dark" th:each="o:${uncheck}">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>订单号</th>
+                                                        <th>客户</th>
+                                                        <th>寄件人</th>
+                                                        <th>寄件人电话</th>
+                                                        <th>寄件人邮箱</th>
+                                                        <th>寄出省市</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getOrderid()}"></td>
+                                                        <td th:text="${o.getClient().getNamezh()}"></td>
+                                                        <td th:text="${o.getSend()}"></td>
+                                                        <td th:text="${o.getSphone()}"></td>
+                                                        <td th:text="${o.getSemail()}"></td>
+                                                        <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
 
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th>收件人</th>
-                                                <th>收件人电话</th>
-                                                <th>收件人邮箱</th>
-                                                <th>收件人省市</th>
-                                                <th>订单时间</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td th:text="${o.getReceive()}"></td>
-                                                <td th:text="${o.getRphone()}"></td>
-                                                <td th:text="${o.getRemail()}"></td>
-                                                <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
-                                                <td th:text="${o.getTime()}"></td>
-                                            </tr>
-                                        </tbody>
-                                        <thead >
-                                            <tr >
-                                                <td>货物名</td>
-                                                <td>数量</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr >
-                                            <span th:each="g:${o.getGoods()}">
-                                             <td  th:text="${g.getName()}"></td>
-                                            </span>
-                                            <span th:each="n:${o.getNum()}">
-                                                <td  th:text="${n}"></td>
-                                            </span>
-                                        </tr>
+                                                    </tr>
+                                                    </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>收件人</th>
+                                                        <th>收件人电话</th>
+                                                        <th>收件人邮箱</th>
+                                                        <th>收件人省市</th>
+                                                        <th>订单时间</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getReceive()}"></td>
+                                                        <td th:text="${o.getRphone()}"></td>
+                                                        <td th:text="${o.getRemail()}"></td>
+                                                        <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                        <td th:text="${o.getTime()}"></td>
+                                                    </tr>
+                                                    <td>
+                                                        <table>
+                                                                <tr>
+                                                                    <td>货物名</td>
+                                                                    <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>数量</td>
+                                                                    <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                                </tr>
+                                                        </table>
+                                                    </td>
+                                                    </tbody>
 
-                                        </tbody>
-                                    </table>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button"
+                                                        data-toggle="collapse" data-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                    审核
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                             data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <table class="table border-dark" th:each="o:${orders}">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>订单号</th>
+                                                        <th>客户</th>
+                                                        <th>寄件人</th>
+                                                        <th>寄件人电话</th>
+                                                        <th>寄件人邮箱</th>
+                                                        <th>寄出省市</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getOrderid()}"></td>
+                                                        <td th:text="${o.getClient().getNamezh()}"></td>
+                                                        <td th:text="${o.getSend()}"></td>
+                                                        <td th:text="${o.getSphone()}"></td>
+                                                        <td th:text="${o.getSemail()}"></td>
+                                                        <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>收件人</th>
+                                                        <th>收件人电话</th>
+                                                        <th>收件人邮箱</th>
+                                                        <th>收件人省市</th>
+                                                        <th>订单时间</th>
+                                                        <th>审核</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getReceive()}"></td>
+                                                        <td th:text="${o.getRphone()}"></td>
+                                                        <td th:text="${o.getRemail()}"></td>
+                                                        <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                        <td th:text="${o.getTime()}"></td>
+                                                        <td th:text="${o.getCheck()}"></td>
+                                                    </tr>
+                                                    <td>
+                                                        <table>
+                                                            <tr>
+                                                                <td>货物名</td>
+                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>数量</td>
+                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
 
         </div>
 
+
     </div>
 
-    <script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
-    <script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
-    <!--Wave Effects -->
-    <script th:src="@{js/waves.js}"></script>
-    <!--Menu sidebar -->
-    <script th:src="@{js/sidebarmenu.js}"></script>
-    <!--Custom JavaScript -->
-    <script th:src="@{js/custom.min.js}"></script>
+</div>
+
+<script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{js/custom.min.js}"></script>
 </body>
 
 </html>

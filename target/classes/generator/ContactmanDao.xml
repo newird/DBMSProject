@@ -20,27 +20,6 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <association property="company" column="company" select="getCompany"/>
   </resultMap>
-  <select id="getContactman" resultMap="CCtMap">
-    select * from  contactman;
-  </select>
-  <select id="getCompany" resultType="com.ce.springboot.pojo.Client">
-    select * from  client where companyCode=#{company};
-  </select>
-  <sql id="Base_Column_List">
-    company, employeeId, `name`, title, phone, tax, email
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from contactman
-    where company = #{company,jdbcType=INTEGER}
-      and employeeId = #{employeeid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey">
-    delete from contactman
-    where company = #{company,jdbcType=INTEGER}
-      and employeeId = #{employeeid,jdbcType=INTEGER}
-  </delete>
   <insert id="insert" keyColumn="company" keyProperty="company" parameterType="com.ce.springboot.pojo.Contactman" useGeneratedKeys="true">
     insert into contactman (employeeId, `name`, title, 
       phone, tax, email,company)
@@ -122,4 +101,44 @@
     where company = #{company,jdbcType=INTEGER}
       and employeeId = #{employeeid,jdbcType=INTEGER}
   </update>
+  <update id="updateById" parameterType="com.ce.springboot.pojo.Contactman">
+    update contactman
+    set `name` = #{name,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=INTEGER},
+      tax = #{tax,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+     where  employeeId = #{employeeid,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteByCompany" parameterType="int">
+    delete from contactman where company = #{id};
+  </delete>
+  <delete id="deleteById" parameterType="int">
+    delete from contactman where employeeId = #{id};
+  </delete>
+  <delete id="deleteByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey">
+    delete from contactman
+    where company = #{company,jdbcType=INTEGER}
+      and employeeId = #{employeeid,jdbcType=INTEGER}
+  </delete>
+  <select id="selectById" parameterType="int" resultType="com.ce.springboot.pojo.Contactman">
+    select *  from contactman where employeeId = #{id};
+  </select>
+  <select id="getContactman" resultMap="CCtMap">
+    select * from  contactman;
+  </select>
+  <select id="getCompany" resultType="com.ce.springboot.pojo.Client">
+    select * from  client where companyCode=#{company};
+  </select>
+  <sql id="Base_Column_List">
+    company, employeeId, `name`, title, phone, tax, email
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.ce.springboot.pojo.ContactmanKey" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from contactman
+    where company = #{company,jdbcType=INTEGER}
+    and employeeId = #{employeeid,jdbcType=INTEGER}
+  </select>
+
 </mapper>

@@ -10,6 +10,12 @@ public class adminLogin {
         return "backboard";
     }
 
+    @RequestMapping("/mylogin")
+    public String login(){
+        return "login";
+    }
+
+
 
 }
 //    @Autowired
