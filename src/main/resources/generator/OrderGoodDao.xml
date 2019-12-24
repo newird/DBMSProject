@@ -44,4 +44,8 @@
       </if>
     </trim>
   </insert>
+  <delete id="deleteOrderById" parameterType="java.lang.String">
+    delete  from `order_good`
+    where orderID = #{id};
+  </delete>
 </mapper>

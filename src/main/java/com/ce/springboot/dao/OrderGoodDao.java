@@ -16,4 +16,6 @@ public interface OrderGoodDao {
     List<Integer> order2good(String  orderId);
 
     List<Integer> order2num(String orderId);
+
+    int deleteOrderById(String id);
 }

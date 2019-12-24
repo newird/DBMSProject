@@ -35,7 +35,7 @@
     where orderId = #{orderid,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from order
+    delete from `order`
     where orderId = #{orderid,jdbcType=CHAR}
   </delete>
   <insert id="insert" keyColumn="orderId" keyProperty="orderid" parameterType="com.ce.springboot.pojo.Order2" useGeneratedKeys="true">

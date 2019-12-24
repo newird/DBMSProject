@@ -71,4 +71,11 @@ public class orderController {
         orderDao2.check(id);
         return "redirect:/orders";
     }
+    @GetMapping("/delOrder/{id}")
+
+    public String deleteOrder(@PathVariable("id") String id){
+        orderGoodDao.deleteOrderById(id);
+        orderDao2.deleteByPrimaryKey(id);
+        return "redirect:/orders";
+    }
 }

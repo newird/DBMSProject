@@ -190,6 +190,8 @@
                                                         <th>收件人省市</th>
                                                         <th>订单时间</th>
                                                         <th>审核</th>
+                                                        <th></th>
+                                                        <th></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -200,6 +202,12 @@
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
+                                                        <td>
+                                                            <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                        </td>
 
                                                     </tr>
                                                     <td>
