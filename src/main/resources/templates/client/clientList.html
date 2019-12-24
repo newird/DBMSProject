@@ -66,7 +66,7 @@
                             <h6 class="card-subtitle">Add class <code>客户</code></h6>
                             <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
                             <form class="app-search" method="post" th:action="@{/searchClient}">
-                                <input type="text" class="search-box" name="search"><button type="submit">查询</button>
+                                <input type="text"  name="search"><button type="submit">查询</button>
                             </form>
                             <div class="table-responsive">
                                 <table class="table">
@@ -116,11 +116,11 @@
                                                     <td th:text="${cm.getEmployeeid()}"></td>
                                                     <td>
                                                         <a class="block btn btn-sm btn-danger"
-                                                           th:href="@{/delClient/}+${cm.getEmployeeid()}">删除</a>
+                                                           th:href="@{/delContactman/}+${cm.getEmployeeid()}">删除</a>
                                                     </td>
                                                     <td>
                                                         <a class="btn btn-sm btn-primary"
-                                                           th:href="@{/updateClient/}+${cm.getEmployeeid()}">编辑</a>
+                                                           th:href="@{/updateContactman/}+${cm.getEmployeeid()}">编辑</a>
                                                     </td>
 
                                                 </tr>

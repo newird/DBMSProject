@@ -151,6 +151,13 @@ class ApplicationTests {
         int sf12312 = orderGoodDao.deleteByKey("sf12312", 4);
         System.out.println("sf12312 = " + sf12312);
     }
+    @Test
+    public void sdfhjd(){
+        List<Client> client = clientDao.searchClient(new search("大"));
+        for (Client client1 : client) {
+            System.out.println("client1 = " + client1);
+        }
+    }
 }
 
 

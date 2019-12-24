@@ -1,6 +1,7 @@
 package com.ce.springboot.dao;
 
 import com.ce.springboot.pojo.Client;
+import com.ce.springboot.pojo.search;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +21,6 @@ public interface ClientDao {
 
     int updateById(Client client);
 
-    List<Client> searchClient(String s);
+    List<Client> searchClient(search s);
 
 }

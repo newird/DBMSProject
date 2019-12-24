@@ -98,8 +98,7 @@
       phone = #{phone,jdbcType=INTEGER},
       tax = #{tax,jdbcType=INTEGER},
       email = #{email,jdbcType=VARCHAR}
-    where company = #{company,jdbcType=INTEGER}
-      and employeeId = #{employeeid,jdbcType=INTEGER}
+      where  employeeId = #{employeeid,jdbcType=INTEGER}
   </update>
   <update id="updateById" parameterType="com.ce.springboot.pojo.Contactman">
     update contactman

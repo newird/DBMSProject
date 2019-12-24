@@ -2,8 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ce.springboot.dao.ClientDao">
-
-
     <resultMap id="ClientMap" type="com.ce.springboot.pojo.Client">
         <result property="namezh" column="namezh"/>
         <result property="nameen" column="nameen"/>
@@ -41,7 +39,7 @@
          from client c,contactman cm
          where c.companyCode = cm.company;
     </select>
-    <select id="searchClient" resultMap="ClientMap" parameterType="java.lang.String">
+    <select id="searchClient" resultMap="ClientMap" parameterType="com.ce.springboot.pojo.search">
         c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
         blankId blankid, blank, companyCode ,province,city, cm.name cname,
         cm.title,cm.phone,cm.tax,cm.email cme, cm.employeeId cmid

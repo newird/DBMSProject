@@ -4,6 +4,7 @@ import com.ce.springboot.dao.ClientDao;
 import com.ce.springboot.dao.ContactmanDao;
 import com.ce.springboot.pojo.Client;
 import com.ce.springboot.pojo.Contactman;
+import com.ce.springboot.pojo.search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,11 +64,12 @@ public class clientController {
         return "redirect:clients";
     }
 
-    @PostMapping("/searchClient?search={search}")
-    public String searchClient(Model model, String search){
+    @PostMapping("/searchClient")
+    public String searchClient(Model model, search search){
         List<Client> client = clientDao.searchClient(search);
         model.addAttribute("client",client);
-        return "redirect:/clients";
+        return "redirect:clients";
+
     }
     @GetMapping("/addCon/{id}")
 
@@ -81,5 +83,23 @@ public class clientController {
         contactman.setCompany(id);
         contactmanDao.insert(contactman);
         return "redirect:/clients";
+    }
+    @GetMapping("/delContactman")
+    public String deleteContactman(@PathVariable("id") int id){
+        contactmanDao.deleteById(id);
+        return "redirect:/clients";
+    }
+    @GetMapping("/updateContactman/{id}")
+    public String update(Model model,@PathVariable("id") int id){
+        Contactman contactman = contactmanDao.selectById(id);
+        model.addAttribute("contactman",contactman);
+        return "contactman/update";
+//        return "test";
+    }
+    @PostMapping("/updateContactman")
+    public String update(Contactman contactman){
+        contactmanDao.updateByPrimaryKey(contactman);
+        return "redirect:clients";
+//        return "test";
     }
 }

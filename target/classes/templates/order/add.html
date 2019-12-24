@@ -14,12 +14,12 @@
 </select><br>
     寄件人<input type="text" name="send" required="required"><br>
     寄件人电话<input type="tel" name="sphone" required="required" pattern="^1\d{10}$"><br>
-    寄件人邮箱<input type="email" name="semail" required="required"><br>
+    寄件人邮箱<input type="email" name="semail" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required="required"><br>
     寄件省<input type="text" name="sprovince" required="required">
     市<input type="text" name="scity" required="required"><br>
     收件人<input type="text" name="receive" required="required"><br>
     收件人电话<input type="tel" name="rphone" required="required" pattern="^1\d{10}$"><br>
-    收件人邮箱<input type="email" name="remail" required="required"><br>
+    收件人邮箱<input type="email" name="remail" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" required="required"><br>
     收件人省<input type="text" name="rprovince" required="required">
     市<input type="text" name="rcity" required="required"><br>
         货物<select name="goodid" required="required">
