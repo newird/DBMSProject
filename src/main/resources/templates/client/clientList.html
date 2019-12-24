@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="utf-8">
@@ -65,6 +65,9 @@
                             <h4 class="card-title">客户信息表</h4>
                             <h6 class="card-subtitle">Add class <code>客户</code></h6>
                             <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
+                            <form class="app-search" method="post" th:action="@{/searchClient}">
+                                <input type="text" class="search-box" name="search"><button type="submit">查询</button>
+                            </form>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>

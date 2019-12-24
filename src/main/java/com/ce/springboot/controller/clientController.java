@@ -63,4 +63,11 @@ public class clientController {
             return "client/add";
         }
     }
+
+    @PostMapping("/searchClient?search={search}")
+    public String searchClient(Model model, String search){
+        List<Client> client = clientDao.searchClient(search);
+        model.addAttribute("client",client);
+        return "redirect:/clients";
+    }
 }

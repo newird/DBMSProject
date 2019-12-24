@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
 
 <head>
     <meta charset="utf-8">
@@ -123,10 +125,16 @@
                                                             <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
                                                         </td>
                                                         <td>
+                                                            <a class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                        </td>
+                                                        <td>
                                                             <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-success" th:href="@{/orderCheck/}+${o.getOrderid()}">审核</a>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderCheck/}+${o.getOrderid()}">审核</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-dark" sec:authorize="hasRole('check')"  th:href="@{/orderCheckF/}+${o.getOrderid()}">未通过</a>
                                                         </td>
                                                     </tr>
                                                     <td>
@@ -209,10 +217,10 @@
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
                                                         <td>
-                                                            <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                            <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" sec:authorize="hasRole('check')">删除</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                            <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" sec:authorize="hasRole('check')">编辑</a>
                                                         </td>
 
                                                     </tr>

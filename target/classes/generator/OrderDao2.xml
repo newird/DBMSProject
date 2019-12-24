@@ -31,7 +31,7 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from order
+    from `order`
     where orderId = #{orderid,jdbcType=CHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
@@ -218,4 +218,11 @@
     set `check` = '审核'
     where orderId = #{id,jdbcType=CHAR}
   </update>
+    <update id="upass" parameterType="java.lang.String">
+    update `order`
+    set `check` = '未通过'
+    where orderId = #{id,jdbcType=CHAR}
+  </update>
+
+
 </mapper>

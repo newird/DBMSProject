@@ -20,4 +20,6 @@ public interface ClientDao {
 
     int updateById(Client client);
 
+    List<Client> searchClient(String s);
+
 }

@@ -26,7 +26,7 @@ public class orderController {
     private ClientDao clientDao;
     @Autowired
     private OrderDao2 orderDao2;
-
+    private String id;
 
     @GetMapping("/orders")
     public String order(Model model){
@@ -71,6 +71,11 @@ public class orderController {
         orderDao2.check(id);
         return "redirect:/orders";
     }
+    @GetMapping("/orderCheckF/{id}")
+    public String unpass(@PathVariable("id") String id){
+        orderDao2.upass(id);
+        return "redirect:/orders";
+    }
     @GetMapping("/delOrder/{id}")
 
     public String deleteOrder(@PathVariable("id") String id){
@@ -88,5 +93,36 @@ public class orderController {
         orderGoodDao.deleteByKey(orderId,Integer.parseInt(goodId));
 
         return "redirect:/orders";
+    }
+    @GetMapping("/Orderupdate/{id}")
+    public String updateOrder(Model model,@PathVariable("id") String id){
+        Order2 order = orderDao2.selectByPrimaryKey(id);
+        model.addAttribute("order",order);
+        List<Client> clients = clientDao.selectClient();
+        model.addAttribute("clients",clients);
+//        List<Good> good = goodDao.selectAllGood();
+//        model.addAttribute("good",good);
+        return "order/update";
+    }
+
+    @PostMapping("/updateOrder")
+    public String uuupdateOrder(Order2 order){
+        orderDao2.updateByPrimaryKey(order);
+        return "redirect:/orders";
+    }
+
+    @PostMapping("/addoGood")
+    public String ooggadd(OrderGood orderGood){
+        orderGood.setOrderid(id);
+        orderGoodDao.insert(orderGood);
+        return "redirect:/orders";
+    }
+    @GetMapping("/addoGood/{id}")
+    public String ooggsssadd(Model model,@PathVariable("id")String id){
+        this.id = id;
+        List<Good> goods = goodDao.selectAllGood();
+        model.addAttribute("good",goods);
+        return "order/addGood";
+
     }
 }

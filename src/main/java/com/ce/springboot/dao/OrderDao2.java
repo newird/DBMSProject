@@ -22,4 +22,6 @@ public interface OrderDao2 {
     int updateByPrimaryKey(Order2 record);
 
     int check(String id);
+
+    int upass(String id);
 }
