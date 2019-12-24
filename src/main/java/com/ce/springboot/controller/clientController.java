@@ -30,8 +30,8 @@ public class clientController {
     }
     @GetMapping("delClient/{id}")
     public String toDel(@PathVariable("id") Integer id){
-        clientDao.deleteClientById(id);
         contactmanDao.deleteByCompany(id);
+        clientDao.deleteClientById(id);
         return "redirect:/clients";
     }
     @GetMapping("/updateClient/{id}")
@@ -43,13 +43,7 @@ public class clientController {
     }
     @PostMapping("/updateClient")
     public String updateclient(Client client){
-        if (id == client.getCompanycode()){
-            clientDao.updateById(client);
-        }else{
-            clientDao.insertClient(client);
-            clientDao.deleteClientById(id);
-        }
-
+        clientDao.updateById(client);
         return "redirect:/clients";
     }
     @GetMapping("/addClient")
@@ -84,7 +78,7 @@ public class clientController {
         contactmanDao.insert(contactman);
         return "redirect:/clients";
     }
-    @GetMapping("/delContactman")
+    @GetMapping("/delContactman/{id}")
     public String deleteContactman(@PathVariable("id") int id){
         contactmanDao.deleteById(id);
         return "redirect:/clients";

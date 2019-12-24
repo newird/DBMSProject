@@ -11,7 +11,7 @@
     <label>职位</label><input type="text" name="title" required="required" th:value="${contactman.getTitle()}"><br>
     <label>电话</label><input type="text" name="phone" pattern="^1\d{10}$" required="required" th:value="${contactman.getPhone()}"><br>
     <label>传真</label><input type="text" name="tax" pattern="^\d{6}$" required="required" th:value="${contactman.getTax()}"><br>
-    <label>email</label><input type="emali" name="email" required="required" th:value="${contactman.getEmail()}"><br>
+    <label>email</label><input type="emali" pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$" name="email" required="required" th:value="${contactman.getEmail()}"><br>
     <label>职工号</label><input type="text" name="employeeid" pattern="^\d{6}$" required="required" th:value="${contactman.getEmployeeid()}"><br>
     <button type="submit" class="btn btn-primary">修改</button>
 </form>

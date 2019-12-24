@@ -76,26 +76,23 @@
     <update id="updateById" parameterType="com.ce.springboot.pojo.Client">
         update client
         <set>
-            <if test="nameZh != null">
-                `nameZh` = #{namezh,jdbcType=VARCHAR},
+            <if test="namezh != null">
+                `namezh` = #{namezh,jdbcType=VARCHAR},
             </if>
-            <if test="nameEn != null">
+            <if test="nameen != null">
                 nameEn = #{nameen,jdbcType=VARCHAR},
             </if>
-            <if test="nameSp != null">
+            <if test="namesp != null">
                 nameSp = #{namesp,jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 `email` = #{email,jdbcType=VARCHAR},
             </if>
-            <if test="blankId != null">
+            <if test="blankid != null">
                 blankId = #{blankid,jdbcType=CHAR},
             </if>
             <if test="blank != null">
                 blank = #{blank,jdbcType=VARCHAR},
-            </if>
-            <if test="companycode != null">
-                `companycode` = #{companycode,jdbcType=INTEGER},
             </if>
             <if test="province != null">
                 province = #{province,jdbcType=VARCHAR},
@@ -105,6 +102,6 @@
             </if>
 
         </set>
-        where compayCode = #{companycode,jdbcType=INTEGER}
+        where companyCode = #{companycode,jdbcType=INTEGER}
     </update>
 </mapper>
