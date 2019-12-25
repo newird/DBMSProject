@@ -139,4 +139,10 @@
     where company = #{company,jdbcType=INTEGER}
     and employeeId = #{employeeid,jdbcType=INTEGER}
   </select>
+
+
+  <select id="numOfContactman" parameterType="int" resultType="int">
+        select count(*) from contactman
+        where company = #{id}
+    </select>
 </mapper>

@@ -61,6 +61,9 @@
                             <h4 class="card-title">客户信息表</h4>
                             <h6 class="card-subtitle">Add class <code>客户</code></h6>
                             <h2><a class="btn btn-sm btn-success" th:href="@{/addClient}">添加</a></h2>
+                            <div th:if="${msg}">
+                                <p th:text="${msg}"></p>
+                            </div>
                             <div class="table-responsive">
                                 <form method="post" action="/clientsearch">
                                     <label>中文名</label><input value="" name="namezh">

@@ -171,6 +171,11 @@ class ApplicationTests {
             System.out.println("order = " + order);
         }
     }
+    @Test
+    public void sdfhnoi(){
+        int i = contactmanDao.numOfContactman(12345678);
+        System.out.println("i = " + i);
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package com.ce.springboot.controller;
 
+import com.ce.springboot.dao.ClientDao;
 import com.ce.springboot.dao.ContactmanDao;
 import com.ce.springboot.pojo.Contactman;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,19 +13,28 @@ public class contactmanController {
 
     @Autowired
     private ContactmanDao contactmanDao;
+    @Autowired
+    private ClientDao clientDao;
 
-    @GetMapping("delCon/{id}")
-    public String toDel(@PathVariable("id") Integer id){
-        contactmanDao.deleteById(id);
+    @GetMapping("/delContactman{id}")
+    public String toDel(Model model,@PathVariable("id") Integer id){
+        Contactman contactman = contactmanDao.selectById(id);
+        int cid = contactman.getCompany();
+        int i = contactmanDao.numOfContactman(cid);
+        if(i ==1){
+            model.addAttribute("msg","剩一个吧");
+        }else{
+            contactmanDao.deleteById(id);
+        }
         return "redirect:/clients";
     }
-    @GetMapping("/updateCon/{id}")
+    @GetMapping("/updateContactman/{id}")
     public String clientupdate(@PathVariable("id") Integer id , Model model){
         Contactman contactman = contactmanDao.selectById(id);
         model.addAttribute("c",contactman);
-        return "client/update";
+        return "contactman/update";
     }
-    @PostMapping("/updateCon")
+    @PostMapping("/updateContactman")
     public String updateclient(Contactman contactman){
         contactmanDao.updateById(contactman);
         return "redirect:/clients";

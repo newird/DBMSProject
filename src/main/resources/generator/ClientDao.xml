@@ -118,4 +118,6 @@
         </set>
         where companyCode = #{companycode,jdbcType=INTEGER}
     </update>
+
+
 </mapper>

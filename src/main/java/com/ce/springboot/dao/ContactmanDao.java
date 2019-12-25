@@ -34,4 +34,6 @@ public interface ContactmanDao {
     Contactman selectById(int id);
 
     int updateById(Contactman contactman);
+
+    int numOfContactman(int id);
 }
