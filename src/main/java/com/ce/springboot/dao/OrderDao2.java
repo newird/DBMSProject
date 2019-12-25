@@ -24,4 +24,6 @@ public interface OrderDao2 {
     int check(String id);
 
     int upass(String id);
+
+    int submit(String id);
 }

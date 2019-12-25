@@ -30,11 +30,41 @@
 
     <select id="selectOrder" resultMap="OrderMap" >
         select o.orderId oid,send, sphone,semail,
-        sprovince,scity,receive,rphone,remail
+        sprovince,scity,receive,rphone,remail remail,
         rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
         and og.goodID = g.goodID
+    </select>
+    <select id="getSubmit" resultMap="OrderMap">
+        select o.orderId oid,send, sphone,semail,
+        sprovince,scity,receive,rphone,remail remail,
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        from client c,`order` o,good g,`order_good` og
+        where c.companyCode = o.client
+        and o.orderId = og.orderID
+        and og.goodID = g.goodID
+        and `check` = '提交';
+    </select>
+    <select id="getPass" resultMap="OrderMap">
+        select o.orderId oid,send, sphone,semail,
+        sprovince,scity,receive,rphone,remail remail,
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        from client c,`order` o,good g,`order_good` og
+        where c.companyCode = o.client
+        and o.orderId = og.orderID
+        and og.goodID = g.goodID
+        and `check` = '审核';
+    </select>
+    <select id="getUnpass" resultMap="OrderMap">
+        select o.orderId oid,send, sphone,semail,
+        sprovince,scity,receive,rphone,remail remail,
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        from client c,`order` o,good g,`order_good` og
+        where c.companyCode = o.client
+        and o.orderId = og.orderID
+        and og.goodID = g.goodID
+        and `check` = '未通过';
     </select>
 </mapper>

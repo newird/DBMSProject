@@ -75,7 +75,7 @@
                                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                                         data-target="#collapseOne" aria-expanded="true"
                                                         aria-controls="collapseOne">
-                                                    未审核
+                                                    未提交
                                                 </button>
                                             </h2>
                                         </div>
@@ -83,7 +83,7 @@
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                              data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <table class="table border-dark" th:each="o:${uncheck}">
+                                                <table class="table border-dark" th:each="o:${unsubmit}">
                                                     <thead>
                                                     <tr>
                                                         <th>订单号</th>
@@ -121,6 +121,10 @@
                                                         <td th:text="${o.getRemail()}"></td>
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
+                                                    <td>
+                                                        <tr>
+
+
                                                         <td>
                                                             <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
                                                         </td>
@@ -131,12 +135,11 @@
                                                             <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderCheck/}+${o.getOrderid()}">审核</a>
-                                                        </td>
-                                                        <td>
-                                                            <a class="btn btn-sm btn-dark" sec:authorize="hasRole('check')"  th:href="@{/orderCheckF/}+${o.getOrderid()}">未通过</a>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('service')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">提交</a>
                                                         </td>
                                                     </tr>
+                                                    </td>
+                                                    </tbody>
                                                     <td>
                                                         <table>
                                                                 <tr>
@@ -167,14 +170,14 @@
                                                 <button class="btn btn-link collapsed" type="button"
                                                         data-toggle="collapse" data-target="#collapseTwo"
                                                         aria-expanded="false" aria-controls="collapseTwo">
-                                                    审核
+                                                    已提交
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                              data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <table class="table border-dark" th:each="o:${orders}">
+                                                <table class="table border-dark" th:each="o:${submit}">
                                                     <thead>
                                                     <tr>
                                                         <th>订单号</th>
@@ -216,16 +219,6 @@
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
-                                                        <td>
-                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" >删除</a>
-                                                        </td>
-                                                        <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" >编辑</a>
-                                                        </td>
-                                                        <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
-                                                        </td>
-
                                                     </tr>
                                                     <td>
                                                         <table>
@@ -236,12 +229,6 @@
                                                             <tr>
                                                                 <td>数量</td>
                                                                 <td th:each="n:${o.getNum()}" th:text="${n}"></td>
-                                                            </tr>
-                                                            <tr sec:authorize="hasRole('admin')">
-                                                                <td>删除</td>
-                                                                <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
-                                                                </td>
                                                             </tr>
                                                         </table>
                                                     </td>

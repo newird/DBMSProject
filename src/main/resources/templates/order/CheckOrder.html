@@ -1,10 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{assets/images/favicon.png}">
+    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link th:href="@{css/style.css}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link th:href="@{css/colors/default-dark.css}" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
 </head>
-<body>
-$END$
+
+<body class="fix-header card-no-border fix-sidebar">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Admin Pro</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div th:insert="~{common::topbar}"></div>
+
+    <div th:insert="~{common::sidebar}"></div>
+
+    <div class="page-wrapper">
+
+        <div class="container-fluid">
+
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">审核订单表</h3>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!-- column -->
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">审核订单表</h4>
+                            <h6 class="card-subtitle">Add class <code>order</code></h6>
+                            <div class="table-responsive">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                        data-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                    提交未审核
+                                                </button>
+                                            </h2>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                             data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <table class="table border-dark" th:each="o:${submit}">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>订单号</th>
+                                                        <th>客户</th>
+                                                        <th>寄件人</th>
+                                                        <th>寄件人电话</th>
+                                                        <th>寄件人邮箱</th>
+                                                        <th>寄出省市</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getOrderid()}"></td>
+                                                        <td th:text="${o.getClient().getNamezh()}"></td>
+                                                        <td th:text="${o.getSend()}"></td>
+                                                        <td th:text="${o.getSphone()}"></td>
+                                                        <td th:text="${o.getSemail()}"></td>
+                                                        <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>收件人</th>
+                                                        <th>收件人电话</th>
+                                                        <th>收件人邮箱</th>
+                                                        <th>收件人省市</th>
+                                                        <th>订单时间</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getReceive()}"></td>
+                                                        <td th:text="${o.getRphone()}"></td>
+                                                        <td th:text="${o.getRemail()}"></td>
+                                                        <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                        <td th:text="${o.getTime()}"></td>
+                                                        <td>
+                                                    <tr>
+                                                        <td>
+                                                            <a class="block btn btn-sm btn-danger" sec:authorize="hasRole('check')" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                        </td>
+
+                                                        <td>
+                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">审核</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">不通过</a>
+                                                        </td>
+                                                    </tr>
+                                                    </td>
+                                                    </tr>
+                                                    </tbody>
+                                                    <td>
+                                                        <table>
+                                                            <tr>
+                                                                <td>货物名</td>
+                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>数量</td>
+                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                            </tr>
+                                                            <tr sec:authorize="hasRole('check')">
+                                                                <td>删除</td>
+                                                                <td th:each="g:${o.getGoods()}">
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button"
+                                                        data-toggle="collapse" data-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                    审核通过
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                             data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <table class="table border-dark" th:each="o:${pass}">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>订单号</th>
+                                                        <th>客户</th>
+                                                        <th>寄件人</th>
+                                                        <th>寄件人电话</th>
+                                                        <th>寄件人邮箱</th>
+                                                        <th>寄出省市</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getOrderid()}"></td>
+                                                        <td th:text="${o.getClient().getNamezh()}"></td>
+                                                        <td th:text="${o.getSend()}"></td>
+                                                        <td th:text="${o.getSphone()}"></td>
+                                                        <td th:text="${o.getSemail()}"></td>
+                                                        <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>收件人</th>
+                                                        <th>收件人电话</th>
+                                                        <th>收件人邮箱</th>
+                                                        <th>收件人省市</th>
+                                                        <th>订单时间</th>
+                                                        <th>审核</th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getReceive()}"></td>
+                                                        <td th:text="${o.getRphone()}"></td>
+                                                        <td th:text="${o.getRemail()}"></td>
+                                                        <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                        <td th:text="${o.getTime()}"></td>
+                                                        <td th:text="${o.getCheck()}"></td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" >删除</a>
+                                                        </td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" >编辑</a>
+                                                        </td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <td>
+                                                        <table>
+                                                            <tr>
+                                                                <td>货物名</td>
+                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>数量</td>
+                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                            </tr>
+                                                            <tr sec:authorize="hasRole('admin')">
+                                                                <td>删除</td>
+                                                                <td th:each="g:${o.getGoods()}">
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button"
+                                                        data-toggle="collapse" data-target="#collapseThree"
+                                                        aria-expanded="false" aria-controls="collapseThree">
+                                                    审核未通过
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                             data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <table class="table border-dark" th:each="o:${unpass}">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>订单号</th>
+                                                        <th>客户</th>
+                                                        <th>寄件人</th>
+                                                        <th>寄件人电话</th>
+                                                        <th>寄件人邮箱</th>
+                                                        <th>寄出省市</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getOrderid()}"></td>
+                                                        <td th:text="${o.getClient().getNamezh()}"></td>
+                                                        <td th:text="${o.getSend()}"></td>
+                                                        <td th:text="${o.getSphone()}"></td>
+                                                        <td th:text="${o.getSemail()}"></td>
+                                                        <td th:text="${o.getSprovince()+' ' + o.getScity()}"></td>
+
+                                                    </tr>
+                                                    </tbody>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>收件人</th>
+                                                        <th>收件人电话</th>
+                                                        <th>收件人邮箱</th>
+                                                        <th>收件人省市</th>
+                                                        <th>订单时间</th>
+                                                        <th>审核</th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td th:text="${o.getReceive()}"></td>
+                                                        <td th:text="${o.getRphone()}"></td>
+                                                        <td th:text="${o.getRemail()}"></td>
+                                                        <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
+                                                        <td th:text="${o.getTime()}"></td>
+                                                        <td th:text="${o.getCheck()}"></td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" >删除</a>
+                                                        </td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" >编辑</a>
+                                                        </td>
+                                                        <td>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                        </td>
+
+                                                    </tr>
+                                                    <td>
+                                                        <table>
+                                                            <tr>
+                                                                <td>货物名</td>
+                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>数量</td>
+                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                            </tr>
+                                                            <tr sec:authorize="hasRole('admin')">
+                                                                <td>删除</td>
+                                                                <td th:each="g:${o.getGoods()}">
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
+<script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{js/custom.min.js}"></script>
 </body>
+
 </html>

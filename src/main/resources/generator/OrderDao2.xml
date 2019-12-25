@@ -223,6 +223,10 @@
     set `check` = '未通过'
     where orderId = #{id,jdbcType=CHAR}
   </update>
-
+    <update id="submit" parameterType="java.lang.String">
+    update `order`
+    set `check` = '提交'
+    where orderId = #{id,jdbcType=CHAR}
+  </update>
 
 </mapper>

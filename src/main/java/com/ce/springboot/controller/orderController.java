@@ -31,17 +31,17 @@ public class orderController {
     @GetMapping("/orders")
     public String order(Model model){
         List<Order> orders = orderDao.selectOrder();
-        List<Order> check = new ArrayList<>();
-        List<Order> uncheck = new ArrayList<>();
+        List<Order> submit = new ArrayList<>();
+        List<Order> unsubmit = new ArrayList<>();
         for (Order order : orders) {
             if (order.getCheck() != null) {
-                check.add(order);
+                submit.add(order);
             }else{
-                uncheck.add(order);
+                unsubmit.add(order);
             }
         }
-        model.addAttribute("orders",check);
-        model.addAttribute("uncheck",uncheck);
+        model.addAttribute("submit",submit);
+        model.addAttribute("unsubmit",unsubmit);
         return "order/orderList";
     }
 
@@ -125,5 +125,21 @@ public class orderController {
         model.addAttribute("good",goods);
         return "order/addGood";
 
+    }
+    @GetMapping("/orderscheck")
+    public String oc(Model model){
+        List<Order> submit = orderDao.getSubmit();
+        List<Order> pass = orderDao.getPass();
+        List<Order> unpass = orderDao.getUnpass();
+        model.addAttribute("submit",submit);
+        model.addAttribute("pass",pass);
+        model.addAttribute("unpass",unpass);
+        return "order/CheckOrder";
+
+    }
+    @GetMapping("/orderSubmit/{id}")
+    public String submit(@PathVariable("id") String id){
+        orderDao2.submit(id);
+        return "redirect:/orders";
     }
 }

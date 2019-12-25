@@ -11,4 +11,10 @@ import java.util.List;
 public interface OrderDao {
 
         List<Order> selectOrder();
+
+        List<Order> getSubmit();
+
+        List<Order> getPass();
+
+        List<Order> getUnpass();
 }
