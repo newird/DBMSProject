@@ -154,8 +154,10 @@ class ApplicationTests {
     }
     @Test
     public void sdfhjd(){
-        List<Client> client = clientDao.searchClient(new search("大"));
-        for (Client client1 : client) {
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("namezh","大");
+        List<Client> clients = clientDao.searchClient(map);
+        for (Client client1 : clients) {
             System.out.println("client1 = " + client1);
         }
     }

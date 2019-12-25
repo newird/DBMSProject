@@ -39,13 +39,27 @@
          from client c,contactman cm
          where c.companyCode = cm.company;
     </select>
-    <select id="searchClient" resultMap="ClientMap" parameterType="com.ce.springboot.pojo.search">
-        c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
+    <select id="searchClient" resultMap="ClientMap" parameterType="map">
+        select  c.NameZh namezh, NameEn nameen, nameSp namesp , c.email ce,
         blankId blankid, blank, companyCode ,province,city, cm.name cname,
         cm.title,cm.phone,cm.tax,cm.email cme, cm.employeeId cmid
-         from client c,contactman cm
-         where c.companyCode = cm.company
-         and c.NameZh like s
+        from client c,contactman cm
+        where c.companyCode = cm.company
+         <if test="namezh != null" >
+             and c.NameZh like CONCAT('%',CONCAT(#{namezh},'%'))
+         </if>
+          <if test="nameen != null" >
+             and c.NameEN like CONCAT('%',CONCAT(#{nameen},'%'))
+         </if>
+          <if test="namesp != null" >
+             and c.NameSp like CONCAT('%',CONCAT(#{namesp},'%'))
+         </if>
+          <if test="province != null" >
+             and c.province like CONCAT('%',CONCAT(#{province},'%'))
+         </if>
+          <if test="city != null" >
+             and c.city like CONCAT('%',CONCAT(#{city},'%'))
+         </if>
          ;
     </select>
 

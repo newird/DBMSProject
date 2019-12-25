@@ -4,7 +4,6 @@ import com.ce.springboot.dao.ClientDao;
 import com.ce.springboot.dao.ContactmanDao;
 import com.ce.springboot.pojo.Client;
 import com.ce.springboot.pojo.Contactman;
-import com.ce.springboot.pojo.search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -58,13 +58,7 @@ public class clientController {
         return "redirect:clients";
     }
 
-    @PostMapping("/searchClient")
-    public String searchClient(Model model, search search){
-        List<Client> client = clientDao.searchClient(search);
-        model.addAttribute("client",client);
-        return "redirect:clients";
 
-    }
     @GetMapping("/addCon/{id}")
 
     public String addComman(@PathVariable("id") int id){
@@ -95,5 +89,30 @@ public class clientController {
         contactmanDao.updateByPrimaryKey(contactman);
         return "redirect:clients";
 //        return "test";
+    }
+    @PostMapping("/clientsearch")
+    public  String search(String namezh,String nameen,String namesp,
+            String province,String city,Model model){
+        HashMap<Object, Object> map = new HashMap<>();
+        if (!namezh.equals("")) {
+            map.put("namezh",namezh);
+        }
+        if (!nameen.equals("")) {
+            map.put("nameen",nameen);
+        }
+        if (!namesp.equals("")) {
+            map.put("namesp",namesp);
+        }
+        if (!province.equals("")) {
+            map.put("province",province);
+        }
+        if (!city.equals("")) {
+            map.put("city",city);
+        }
+
+        List<Client> clients = clientDao.searchClient(map);
+        model.addAttribute("clients",clients);
+        return "client/clientList";
+
     }
 }
