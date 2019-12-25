@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 public class orderController {
@@ -142,4 +139,52 @@ public class orderController {
         orderDao2.submit(id);
         return "redirect:/orders";
     }
-}
+    @PostMapping("/OrderForm")
+    public String sdofno( String orderid,String company
+                          , String send,String sphone,
+                          String receive,String rphone
+                          ,Model model){
+//        try {
+            HashMap<Object, Object> map = new HashMap<>();
+            if (!orderid.equals("")) {
+                map.put("orderid", orderid);
+            }
+            if (!company.equals("")) {
+                map.put("company", company);
+            }
+            if (!send.equals("")) {
+                map.put("send", send);
+            }
+            if (!sphone.equals("")) {
+                map.put("sphone", sphone);
+            }
+            if (!receive.equals("")) {
+                map.put("receive", receive);
+            }
+            if (!rphone.equals("")) {
+                map.put("rphone", rphone);
+            }
+//            map.put("orderid",orderid);
+            List<Order> orders = orderDao.fuzzselect(map);
+            model.addAttribute("orders", orders);
+//        }catch (Exception e){
+//            e.printStackTrace();;
+//        }
+        List<Order> submit = new ArrayList<>();
+        List<Order> unsubmit = new ArrayList<>();
+        for (Order order : orders) {
+            if (order.getCheck() != null) {
+                submit.add(order);
+            }else{
+                unsubmit.add(order);
+            }
+        }
+        model.addAttribute("submit",submit);
+        model.addAttribute("unsubmit",unsubmit);
+        return "order/orderList";
+//        return "test";
+    }
+
+
+
+    }

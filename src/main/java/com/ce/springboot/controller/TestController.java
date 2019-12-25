@@ -52,4 +52,9 @@ public class TestController {
     public String address(){
         return "address";
     }
+
+    @RequestMapping("/tf")
+    public String sdn(){
+        return "testForm";
+    }
 }

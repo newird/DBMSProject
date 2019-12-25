@@ -67,4 +67,33 @@
         and og.goodID = g.goodID
         and `check` = '未通过';
     </select>
+    <select id="fuzzselect" resultMap="OrderMap" parameterType="map">
+        select o.orderId oid,send, sphone,semail,
+        sprovince,scity,receive,rphone,remail remail,
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        from client c,`order` o,good g,`order_good` og
+        where c.companyCode = o.client
+        and o.orderId = og.orderID
+        and og.goodID = g.goodID
+        <if test="orderid != null">
+            and o.orderId = #{orderid}
+        </if>
+        <if test="company != null">
+            and c.NameZh like CONCAT('%',CONCAT(#{company},'%'))
+        </if>
+        <if test="send != null">
+            and o.send like CONCAT('%',CONCAT(#{send},'%'))
+        </if>
+        <if test="sphone != null">
+            and o.sphone  = #{sphone}
+        </if>
+        <if test="receive != null">
+
+            and o.receive = CONCAT('%',CONCAT(#{receive},'%'))
+        </if>
+        <if test="rphone != null">
+            and rphone = #{rphone}
+        </if>
+    </select>
+
 </mapper>

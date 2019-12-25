@@ -69,6 +69,16 @@
                             <h2><a class="btn btn-sm btn-success" th:href="@{/addOrder}">添加</a></h2>
                             <div class="table-responsive">
                                 <div class="accordion" id="accordionExample">
+                                    <form method="post" action="/testForm">
+                                        <label>订单号</label><input type="text" value="" name="orderid" pattern="^\w{8}$">
+                                        <label>公司</label><input name="company"  value="" type="text">
+                                        <label>寄件人</label><input type="text" value="" name="send">
+                                        <label>寄件人手机号</label><input pattern="^1\d{10}$" value="" name="sphone" type="text">
+                                        <label>收件人</label><input type="text" value="" name="receive">
+                                        <label>收件人手机号</label><input pattern="^1\d{10}$" value="" name="rphone" type="text">
+                                        <button type="submit">查询</button>
+                                    </form>
+
                                     <div class="card">
                                         <div class="card-header" id="headingOne">
                                             <h2 class="mb-0">

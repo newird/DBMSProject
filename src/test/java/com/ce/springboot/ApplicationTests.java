@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootTest
@@ -156,6 +157,16 @@ class ApplicationTests {
         List<Client> client = clientDao.searchClient(new search("大"));
         for (Client client1 : client) {
             System.out.println("client1 = " + client1);
+        }
+    }
+
+    @Test
+    public void madkfn(){
+        HashMap<String,String> map = new HashMap<>();
+        map.put("company","大");
+        List<Order> orders = orderDao.fuzzselect(map);
+        for (Order order : orders) {
+            System.out.println("order = " + order);
         }
     }
 }
