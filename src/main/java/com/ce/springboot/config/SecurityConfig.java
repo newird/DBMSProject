@@ -30,7 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/fonts/**", "/images/**").permitAll()
          .antMatchers("/good/**", "/client/**").hasRole("base")
          .antMatchers("/goods", "/clients").hasRole("base")
-         .antMatchers("/order/**").hasRole("service")
+//         .antMatchers("/order/**").hasRole("service")
+        .antMatchers("/orders").hasRole("service")
+        .antMatchers("/orderscheck").hasRole("check")
+        .antMatchers("users").hasRole("admin")
     
 //         .antMatchers("/users").hasRole("admin")
 //                .antMatchers("/","/login").permitAll();

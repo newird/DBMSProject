@@ -20,4 +20,8 @@ public interface OrderDao {
         List<Order> getUnpass();
 
         List<Order> fuzzselect(Map map);
+
+        List<Order> getSubmitfuzz(Map map);
+        List<Order> getPassfuzz(Map map);
+        List<Order> getUnpassfuzz(Map map);
 }

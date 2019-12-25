@@ -26,56 +26,60 @@ public class orderController {
     private String id;
 
     @GetMapping("/orders")
-    public String order(Model model){
+    public String order(Model model) {
         List<Order> orders = orderDao.selectOrder();
         List<Order> submit = new ArrayList<>();
         List<Order> unsubmit = new ArrayList<>();
         for (Order order : orders) {
             if (order.getCheck() != null) {
                 submit.add(order);
-            }else{
+            } else {
                 unsubmit.add(order);
             }
         }
-        model.addAttribute("submit",submit);
-        model.addAttribute("unsubmit",unsubmit);
+        model.addAttribute("submit", submit);
+        model.addAttribute("unsubmit", unsubmit);
         return "order/orderList";
     }
 
     @GetMapping("/addOrder")
-    public String addOrder(Model model){
+    public String addOrder(Model model) {
         List<Client> clients = clientDao.selectClient();
         List<Good> goods = goodDao.selectAllGood();
-        model.addAttribute("clients",clients);
-        model.addAttribute("goods",goods);
+        model.addAttribute("clients", clients);
+        model.addAttribute("goods", goods);
         return "order/add";
     }
+
     @PostMapping("/addOrder")
-    public String orderadd(Order2 order, OrderGood orderGood){
-        String OrderId = UUID.randomUUID().toString().replaceAll("-","").substring(2, 10);
+    public String orderadd(Order2 order, OrderGood orderGood) {
+        String OrderId = UUID.randomUUID().toString().replaceAll("-", "").substring(2, 10);
         order.setOrderid(OrderId);
         order.setTime(new Date());
         orderDao2.insert(order);
 //        for (OrderGood orderGood : orderGoods) {
-            orderGood.setOrderid(OrderId);
-            orderGoodDao.insert(orderGood);
+        orderGood.setOrderid(OrderId);
+        orderGoodDao.insert(orderGood);
 //        }
 
         return "redirect:/orders";
     }
+
     @GetMapping("/orderCheck/{id}")
-    public String check(@PathVariable("id") String id){
+    public String check(@PathVariable("id") String id) {
         orderDao2.check(id);
         return "redirect:/orders";
     }
+
     @GetMapping("/orderCheckF/{id}")
-    public String unpass(@PathVariable("id") String id){
+    public String unpass(@PathVariable("id") String id) {
         orderDao2.upass(id);
         return "redirect:/orders";
     }
+
     @GetMapping("/delOrder/{id}")
 
-    public String deleteOrder(@PathVariable("id") String id){
+    public String deleteOrder(@PathVariable("id") String id) {
         orderGoodDao.deleteOrderById(id);
         orderDao2.deleteByPrimaryKey(id);
         return "redirect:/orders";
@@ -83,90 +87,95 @@ public class orderController {
 
     @GetMapping("/delog/{id}")
 
-    public String deleteog(@PathVariable("id")String id,Model model){
-        String orderId = id.substring(0,8);
+    public String deleteog(@PathVariable("id") String id, Model model) {
+        String orderId = id.substring(0, 8);
         String goodId = id.substring(8);
 
-        orderGoodDao.deleteByKey(orderId,Integer.parseInt(goodId));
+        orderGoodDao.deleteByKey(orderId, Integer.parseInt(goodId));
 //        model.addAttribute("o",orderId);
 //        model.addAttribute("g",goodId);
         return "redirect:/orders";
     }
+
     @GetMapping("/Orderupdate/{id}")
-    public String updateOrder(Model model,@PathVariable("id") String id){
+    public String updateOrder(Model model, @PathVariable("id") String id) {
         Order2 order = orderDao2.selectByPrimaryKey(id);
-        model.addAttribute("order",order);
+        model.addAttribute("order", order);
         List<Client> clients = clientDao.selectClient();
-        model.addAttribute("clients",clients);
+        model.addAttribute("clients", clients);
 //        List<Good> good = goodDao.selectAllGood();
 //        model.addAttribute("good",good);
         return "order/update";
     }
 
     @PostMapping("/updateOrder")
-    public String uuupdateOrder(Order2 order){
+    public String uuupdateOrder(Order2 order) {
         orderDao2.updateByPrimaryKey(order);
         return "redirect:/orders";
     }
 
     @PostMapping("/addoGood")
-    public String ooggadd(OrderGood orderGood){
+    public String ooggadd(OrderGood orderGood) {
         orderGood.setOrderid(id);
         orderGoodDao.insert(orderGood);
         return "redirect:/orders";
     }
+
     @GetMapping("/addoGood/{id}")
-    public String ooggsssadd(Model model,@PathVariable("id")String id){
+    public String ooggsssadd(Model model, @PathVariable("id") String id) {
         this.id = id;
         List<Good> goods = goodDao.selectAllGood();
-        model.addAttribute("good",goods);
+        model.addAttribute("good", goods);
         return "order/addGood";
 
     }
+
     @GetMapping("/orderscheck")
-    public String oc(Model model){
+    public String oc(Model model) {
         List<Order> submit = orderDao.getSubmit();
         List<Order> pass = orderDao.getPass();
         List<Order> unpass = orderDao.getUnpass();
-        model.addAttribute("submit",submit);
-        model.addAttribute("pass",pass);
-        model.addAttribute("unpass",unpass);
+        model.addAttribute("submit", submit);
+        model.addAttribute("pass", pass);
+        model.addAttribute("unpass", unpass);
         return "order/CheckOrder";
 
     }
+
     @GetMapping("/orderSubmit/{id}")
-    public String submit(@PathVariable("id") String id){
+    public String submit(@PathVariable("id") String id) {
         orderDao2.submit(id);
         return "redirect:/orders";
     }
+
     @PostMapping("/OrderForm")
-    public String sdofno( String orderid,String company
-                          , String send,String sphone,
-                          String receive,String rphone
-                          ,Model model){
+    public String sdofno(String orderid, String company
+            , String send, String sphone,
+                         String receive, String rphone
+            , Model model) {
 //        try {
-            HashMap<Object, Object> map = new HashMap<>();
-            if (!orderid.equals("")) {
-                map.put("orderid", orderid);
-            }
-            if (!company.equals("")) {
-                map.put("company", company);
-            }
-            if (!send.equals("")) {
-                map.put("send", send);
-            }
-            if (!sphone.equals("")) {
-                map.put("sphone", sphone);
-            }
-            if (!receive.equals("")) {
-                map.put("receive", receive);
-            }
-            if (!rphone.equals("")) {
-                map.put("rphone", rphone);
-            }
+        HashMap<Object, Object> map = new HashMap<>();
+        if (!orderid.equals("")) {
+            map.put("orderid", orderid);
+        }
+        if (!company.equals("")) {
+            map.put("company", company);
+        }
+        if (!send.equals("")) {
+            map.put("send", send);
+        }
+        if (!sphone.equals("")) {
+            map.put("sphone", sphone);
+        }
+        if (!receive.equals("")) {
+            map.put("receive", receive);
+        }
+        if (!rphone.equals("")) {
+            map.put("rphone", rphone);
+        }
 //            map.put("orderid",orderid);
-            List<Order> orders = orderDao.fuzzselect(map);
-            model.addAttribute("orders", orders);
+        List<Order> orders = orderDao.fuzzselect(map);
+        model.addAttribute("orders", orders);
 //        }catch (Exception e){
 //            e.printStackTrace();;
 //        }
@@ -175,16 +184,50 @@ public class orderController {
         for (Order order : orders) {
             if (order.getCheck() != null) {
                 submit.add(order);
-            }else{
+            } else {
                 unsubmit.add(order);
             }
         }
-        model.addAttribute("submit",submit);
-        model.addAttribute("unsubmit",unsubmit);
+        model.addAttribute("submit", submit);
+        model.addAttribute("unsubmit", unsubmit);
         return "order/orderList";
 //        return "test";
     }
 
-
-
+    @PostMapping("/ordercheckForm")
+    public String sdofcckkoo(String orderid, String company
+            , String send, String sphone,
+                             String receive, String rphone
+            , Model model) {
+//        try {
+        HashMap<Object, Object> map = new HashMap<>();
+        if (!orderid.equals("")) {
+            map.put("orderid", orderid);
+        }
+        if (!company.equals("")) {
+            map.put("company", company);
+        }
+        if (!send.equals("")) {
+            map.put("send", send);
+        }
+        if (!sphone.equals("")) {
+            map.put("sphone", sphone);
+        }
+        if (!receive.equals("")) {
+            map.put("receive", receive);
+        }
+        if (!rphone.equals("")) {
+            map.put("rphone", rphone);
+        }
+        List<Order> submit = orderDao.getSubmitfuzz(map);
+        List<Order> pass = orderDao.getPassfuzz(map);
+        List<Order> unpass = orderDao.getUnpassfuzz(map);
+        model.addAttribute("submit", submit);
+        model.addAttribute("pass", pass);
+        model.addAttribute("unpass", unpass);
+        return "order/CheckOrder";
+//        return "test";
     }
+
+
+}
