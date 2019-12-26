@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{assets/images/favicon.png}">
-    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <title>货物信息</title>
     <!-- Bootstrap Core CSS -->
     <link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -23,18 +23,7 @@
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Admin Pro</p>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+
     <div id="main-wrapper">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
@@ -51,9 +40,7 @@
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Table basic</h3>
                     </div>
-                    <div class="col-md-7 align-self-center">
-                        <a href="#" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to Pro</a>
-                    </div>
+
                 </div>
 
                 <div class="row">
@@ -62,8 +49,13 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">货物信息表</h4>
-                                <h6 class="card-subtitle">Add class <code>.货物</code></h6>
+                                <h6 class="card-subtitle">Add class <code>货物</code></h6>
                                 <h2><a class="btn btn-sm btn-success" th:href="@{/addGood}">添加</a></h2>
+                                <form action="/goodsearch" method="post">
+                                    <label>货物id</label><input type="text" value="" pattern="^\d+$" name="id">
+                                    <label>货物名</label><input type="text" value="" name="name">
+                                    <button type="submit">查询</button>
+                                </form>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>

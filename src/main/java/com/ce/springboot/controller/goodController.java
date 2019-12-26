@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -52,6 +53,24 @@ public class goodController {
     public String addGoodd(){
 
         return "good/add";
+    }
+    @PostMapping("/goodsearch")
+    public String searchgood(String  id,String name,Model model){
+        HashMap<Object, Object> map = new HashMap<>();
+        if(!id.equals("")){
+            int goodid= Integer.parseInt(id);
+            map.put("goodid",goodid);
+//            model.addAttribute("goodid",goodid);
+        }
+        if(!name.equals("")){
+            map.put("goodname",name);
+//            model.addAttribute("name",name);
+        }
+        List<Good> goods = goodDao.fuzzsearch(map);
+        model.addAttribute("goods",goods);
+        return "good/goodList";
+//        model.addAttribute("name",name);
+//        return "test";
     }
 
 }

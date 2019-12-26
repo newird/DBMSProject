@@ -194,6 +194,14 @@ class ApplicationTests {
         int base_li = adminuserDao.userexist("base_li");
         System.out.println("base_li = " + base_li);
     }
+    @Test
+    public void sdfjoisdfn(){
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("goodname","梨");
+
+        List<Good> fuzzsearch = goodDao.fuzzsearch(map);
+        System.out.println("fuzzsearch = " + fuzzsearch);
+    }
 }
 
 

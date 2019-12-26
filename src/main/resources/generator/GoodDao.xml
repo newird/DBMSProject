@@ -77,4 +77,13 @@
     </set>
     where goodID = #{goodid,jdbcType=INTEGER}
   </update>
+  <select id="fuzzsearch" parameterType="map" resultType="com.ce.springboot.pojo.Good">
+    select  * from good where 1=1
+    <if test="goodid != null">
+       and good.goodID = #{goodid}
+    </if>
+    <if test="goodname != null">
+        and good.name like CONCAT('%',CONCAT(#{goodname},'%'))
+    </if>
+  </select>
 </mapper>
