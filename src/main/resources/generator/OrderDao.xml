@@ -25,6 +25,12 @@
         <collection property="goods" ofType="com.ce.springboot.pojo.Good">
             <result property="name" column="gname"/>
             <result property="goodid" column="gid"/>
+            <result property="length" column="lehgth"/>
+            <result property="width" column="width"/>
+            <result property="height" column="height"/>
+            <result property="type" column="type"/>
+            <result property="temperature" column="temperature"/>
+            <result property="expiry" column="expiry"/>
         </collection>
     </resultMap>
 
@@ -98,7 +104,8 @@
     <select id="getSubmitfuzz" resultMap="OrderMap" parameterType="map">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,
+        g.goodID gid,g.goodID, name, expiry, temperature, type, mass, `package`, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID

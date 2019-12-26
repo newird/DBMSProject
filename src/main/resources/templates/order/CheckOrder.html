@@ -140,10 +140,10 @@
                                                             <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/cOrderupdate/}+${o.getOrderid()}">编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">审核</a>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderCheck/}+${o.getOrderid()}">审核</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">不通过</a>
+                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderCheckF/}+${o.getOrderid()}">不通过</a>
                                                         </td>
                                                     </tr>
                                                     </td>
@@ -229,13 +229,13 @@
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" >删除</a>
+                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/cdelOrder/}+${o.getOrderid()}" >删除</a>
                                                         </td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" >编辑</a>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/cOrderupdate/}+${o.getOrderid()}" >编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/caddoGood/}+${o.getOrderid()}">添加货物</a>
                                                         </td>
 
                                                     </tr>
@@ -252,7 +252,7 @@
                                                             <tr sec:authorize="hasRole('admin')">
                                                                 <td>删除</td>
                                                                 <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -318,13 +318,13 @@
                                                         <td th:text="${o.getTime()}"></td>
                                                         <td th:text="${o.getCheck()}"></td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}" >删除</a>
+                                                            <a sec:authorize="hasRole('admin')" class="block btn btn-sm btn-danger" th:href="@{/cdelOrder/}+${o.getOrderid()}" >删除</a>
                                                         </td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}" >编辑</a>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/cOrderupdate/}+${o.getOrderid()}" >编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                            <a sec:authorize="hasRole('admin')" class="btn btn-sm btn-primary" th:href="@{/caddoGood/}+${o.getOrderid()}">添加货物</a>
                                                         </td>
 
                                                     </tr>
@@ -341,7 +341,7 @@
                                                             <tr sec:authorize="hasRole('admin')">
                                                                 <td>删除</td>
                                                                 <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
                                                                 </td>
                                                             </tr>
                                                         </table>

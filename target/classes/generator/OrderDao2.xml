@@ -209,8 +209,7 @@
       rphone = #{rphone,jdbcType=CHAR},
       remail = #{remail,jdbcType=VARCHAR},
       rprovince = #{rprovince,jdbcType=CHAR},
-      rcity = #{rcity,jdbcType=CHAR},
-      `time` = #{time,jdbcType=DATE}
+      rcity = #{rcity,jdbcType=CHAR}
     where orderId = #{orderid,jdbcType=CHAR}
   </update>
   <update id="check" parameterType="java.lang.String">

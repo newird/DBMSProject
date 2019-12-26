@@ -68,13 +68,13 @@ public class orderController {
     @GetMapping("/orderCheck/{id}")
     public String check(@PathVariable("id") String id) {
         orderDao2.check(id);
-        return "redirect:/orders";
+        return "redirect:/orderscheck";
     }
 
     @GetMapping("/orderCheckF/{id}")
     public String unpass(@PathVariable("id") String id) {
         orderDao2.upass(id);
-        return "redirect:/orders";
+        return "redirect:/orderscheck";
     }
 
     @GetMapping("/delOrder/{id}")
@@ -109,9 +109,11 @@ public class orderController {
     }
 
     @PostMapping("/updateOrder")
-    public String uuupdateOrder(Order2 order) {
+    public String uuupdateOrder(Order2 order,Model model) {
         orderDao2.updateByPrimaryKey(order);
         return "redirect:/orders";
+//        model.addAttribute("order",order);
+//        return "test";
     }
 
 
@@ -173,9 +175,6 @@ public class orderController {
 //            map.put("orderid",orderid);
         List<Order> orders = orderDao.fuzzselect(map);
         model.addAttribute("orders", orders);
-//        }catch (Exception e){
-//            e.printStackTrace();;
-//        }
         List<Order> submit = new ArrayList<>();
         List<Order> unsubmit = new ArrayList<>();
         for (Order order : orders) {
@@ -187,6 +186,7 @@ public class orderController {
         }
         model.addAttribute("submit", submit);
         model.addAttribute("unsubmit", unsubmit);
+
         return "order/orderList";
 //        return "test";
     }
@@ -248,7 +248,6 @@ public class orderController {
     public String asdeleteog(@PathVariable("id") String id, Model model) {
         String orderId = id.substring(0, 8);
         String goodId = id.substring(8);
-
         orderGoodDao.deleteByKey(orderId, Integer.parseInt(goodId));
         return "redirect:/orderscheck";
     }
