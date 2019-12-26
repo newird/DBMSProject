@@ -32,6 +32,9 @@
         <p class="loader__label">Admin Pro</p>
     </div>
 </div>
+<script th:if="${msg}">
+    alert("${msg}");
+</script>
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
@@ -73,7 +76,7 @@
                                     <label>市</label><input value="" name="city">
                                     <button type="submit">提交</button>
                                 </form>
-                                <table class="table">
+                                <table class="table table-striped table-hover table-bordered" th:each="c:${clients}">
                                     <thead>
                                     <tr>
                                         <th>中文名</th>
@@ -85,12 +88,11 @@
                                         <th>公司代码</th>
                                         <th>省</th>
                                         <th>市</th>
-
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <!--                                        <div th:text="${clients}"></div>-->
-                                    <tr th:each="c:${clients}">
+                                    <tr >
                                         <td th:text="${c.getNamezh()}"></td>
                                         <td th:text="${c.getNameen()}"></td>
                                         <td th:text="${c.getNamesp()}"></td>
@@ -100,7 +102,7 @@
                                         <td th:text="${c.getCompanycode()}"></td>
                                         <td th:text="${c.getProvince()}"></td>
                                         <td th:text="${c.getCity()}"></td>
-                                        <td>
+
                                             <table>
                                                 <thead>
                                                 <tr>
@@ -113,10 +115,10 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr th:each="cm:${c.getContactman()}">
-                                                    <td th:text="${cm.getName()}"></td>
-                                                    <td th:text="${cm.getTitle()}"></td>
-                                                    <td th:text="${cm.getEmail()}"></td>
-                                                    <td th:text="${cm.getPhone()}"></td>
+                                                    <td th:text="${cm.getName()}+'    '"></td>
+                                                    <td th:text="${cm.getTitle()}     "></td>
+                                                    <td th:text="${cm.getEmail()}     "></td>
+                                                    <td th:text="${cm.getPhone()}     "></td>
                                                     <td th:text="${cm.getEmployeeid()}"></td>
                                                     <td>
                                                         <a class="block btn btn-sm btn-danger"
@@ -129,8 +131,7 @@
 
                                                 </tr>
                                                 </tbody>
-                                            </table>
-                                        </td>
+
 
                                         <td>
                                             <a class="block btn btn-sm btn-danger"

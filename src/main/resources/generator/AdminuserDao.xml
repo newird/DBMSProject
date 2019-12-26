@@ -88,4 +88,8 @@
       perm = #{perm,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="userexist" resultType="int" parameterType="java.lang.String">
+    select count(id) from adminuser
+    where adminUser = #{name}
+  </select>
 </mapper>

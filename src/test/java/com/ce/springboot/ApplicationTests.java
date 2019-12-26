@@ -176,6 +176,24 @@ class ApplicationTests {
         int i = contactmanDao.numOfContactman(12345678);
         System.out.println("i = " + i);
     }
+
+    @Test
+    public void asdfnk(){
+        int id = 665542;
+        Contactman contactman = contactmanDao.selectById(id);
+        int company = contactman.getCompany();
+        int i = contactmanDao.numOfContactman(company);
+        if( i> 1){
+            System.out.println("sdsd");
+        }else{
+            System.out.println("nnnn");
+        }
+    }
+    @Test
+    public void sdfhnojsdkf(){
+        int base_li = adminuserDao.userexist("base_li");
+        System.out.println("base_li = " + base_li);
+    }
 }
 
 

@@ -53,7 +53,11 @@ public class adminUserController {
         return "user/add";
     }
     @PostMapping("/addUser")
-    public String addUser(Adminuser user){
+    public String addUser(Adminuser user,Model model){
+        if(adminuserDao.userexist(user.getAdminuser()) ==1){
+            model.addAttribute("msg","user exist");
+            return "user/add";
+        }
         String password = user.getPassword();
         password = new BCryptPasswordEncoder().encode(password);
         password = "{bcrypt}"+password;

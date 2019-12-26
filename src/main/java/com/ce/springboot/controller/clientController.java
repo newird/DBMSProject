@@ -73,9 +73,18 @@ public class clientController {
         return "redirect:/clients";
     }
     @GetMapping("/delContactman/{id}")
-    public String deleteContactman(@PathVariable("id") int id){
-        contactmanDao.deleteById(id);
+    public String deleteContactman(@PathVariable("id") int id,Model model){
+        Contactman contactman = contactmanDao.selectById(id);
+        int company = contactman.getCompany();
+        int i = contactmanDao.numOfContactman(company);
+        if( i> 1){
+            contactmanDao.deleteById(id);
+
+        }else{
+            model.addAttribute("msg","不能删除");
+        }
         return "redirect:/clients";
+
     }
     @GetMapping("/updateContactman/{id}")
     public String update(Model model,@PathVariable("id") int id){

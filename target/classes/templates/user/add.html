@@ -30,7 +30,9 @@
 
 <body>
 
-
+<div th:if="${msg}">
+    <p style="color: red;text-align: center" th:text="${msg}"></p>
+</div>
 <div class="container"></div>
 <form th:action="@{/addUser}" method="post" class="col-6 col-offset-2 center-block">
 

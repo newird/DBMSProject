@@ -26,4 +26,6 @@ public interface AdminuserDao {
     int updateByPrimaryKeyUser(Adminuser record);
 
     Adminuser selectByUsername(String username);
+
+    int userexist(String name);
 }
