@@ -8,20 +8,18 @@
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/OrderGoodDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/dao/OrderGoodDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/OrderGood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/OrderGood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/OrderGoodDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/OrderGoodDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/addGood.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/addGood.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/OrderGoodDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/dao/OrderGoodDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/client/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/client/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contactman/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contactman/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/good/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/good/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/OrderGood.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/OrderGood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator/OrderGoodDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/OrderGoodDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/addGood.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/addGood.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ce/springboot/ApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/client/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/client/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/contactman/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/contactman/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/good/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/good/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/order/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,11 +341,6 @@
                 <item name="root:spring@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="com.intellij.database.console.session.MessageBusSession@14e5219" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:spring@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@148398b9" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -392,7 +385,7 @@
       <workItem from="1577157222117" duration="32971000" />
       <workItem from="1577256087819" duration="21214000" />
       <workItem from="1577283282389" duration="2152000" />
-      <workItem from="1577330176070" duration="8930000" />
+      <workItem from="1577330176070" duration="11620000" />
     </task>
     <servers />
   </component>
@@ -556,10 +549,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="420" y="1" key="refactoring.ChangeSignatureDialog/73.0.1293.768@73.0.1293.768" timestamp="1576913895481" />
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577283739514">
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577342633788">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1577283739514" />
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1577342633788" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

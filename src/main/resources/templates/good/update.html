@@ -4,69 +4,77 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:href="@{css/login.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.css}" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-left: 30%">
     <form th:action="@{/goodadd}" method="post" class="form-horizontal col-9 col-offset-2" role="form" style="margin-top: 100px;margin-left: 100px" >
 <!--        <label>货物编号 </label> <input required="required" type="number" min="1" name="goodid" th:value="${good.getGoodId()}"><br>-->
-        <label>货物名</label> <input required="required" type="text" name="name" th:value="${good.getName()}">
-        <label>保质期（天）</label> <input required="required" pattern="^\d+$" type="number" min="1" name="expiry" th:value="${good.getExpiry()}">
-        <label>保存温度</label> <input required="required" type="number" name="temperature" th:value="${good.getTemperature()}"><br>
-        <label>类型 </label>
-        <select name="type" th:value="${good.getType()}" required="required">
-            <option value="水果"> 水果</option>
-            <option value="生鲜"> 生鲜</option>
-            <option value="数码"> 数码</option>
-            <option value="家具"> 家具</option>
-            <option value="车品"> 车品</option>
-            <option value="美妆"> 美妆</option>
-            <option value="箱包"> 箱包</option>
-            <option value="保健"> 保健</option>
-            <option value="其他"> 其他</option>
-        </select>
-        <label>质量 </label> <input required="required" type="text" name="mass" th:value="${good.getMass()}">
-        <label>包装方式 </label> <input required="required" type="text" name="packages" th:value="${good.getPackages()}">
-        <label>长 </label> <input required="required" pattern="^\d+$" type="number" min="1" name="length" th:value="${good.getLength()}">
-        <label>宽 </label> <input required="required" pattern="^\d+$" type="number" min="1" name="width" th:value="${good.getWidth()}">
-        <label>高 </label> <input required="required" pattern="^\d+$" type="number" min="1" name="height" th:value="${good.getHeight()}"><br>
-        <label>单位</label> <input required="required" type="text" name="unit" th:value="${good.getUnit()}"><br>
-        <button type="submit" class="btn btn-primary col-offset-6">提交</button>
+        <table class="table-pane table-bordered table-striped">
+            <tr>
+                <td> <label>货物名</label></td>
+                <td><input required="required" type="text" name="name" th:value="${good.getName()}">
+                </td>
+            </tr>
+            <tr>
+                <td><label>保质期（天）</label></td>
+                <td><input required="required" pattern="^\d+$" type="number" min="1" name="expiry" th:value="${good.getExpiry()}">
+                </td>
+            </tr>
+            <tr>
+                <td> <label>保存温度</label></td>
+                <td><input required="required" type="number" name="temperature" th:value="${good.getTemperature()}"><br>
+                </td>
+            </tr>
+            <tr>
+                <td><label>类型 </label></td>
+                <td> <select name="type" th:value="${good.getType()}" required="required">
+                    <option value="水果"> 水果</option>
+                    <option value="生鲜"> 生鲜</option>
+                    <option value="数码"> 数码</option>
+                    <option value="家具"> 家具</option>
+                    <option value="车品"> 车品</option>
+                    <option value="美妆"> 美妆</option>
+                    <option value="箱包"> 箱包</option>
+                    <option value="保健"> 保健</option>
+                    <option value="其他"> 其他</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td> <label>质量 </label></td>
+                <td><input required="required" type="text" name="mass" th:value="${good.getMass()}">
+                </td>
+            </tr>
+            <tr>
+                <td><label>包装方式 </label></td>
+                <td><input required="required" type="text" name="packages" th:value="${good.getPackages()}">
+                </td>
+            </tr>
+            <tr>
+                <td><label>长 </label></td>
+                <td> <input required="required" pattern="^\d+$" type="number" min="1" name="length" th:value="${good.getLength()}">
+                </td>
+            </tr>
+            <tr>
+                <td><label>宽 </label></td>
+                <td><input required="required" pattern="^\d+$" type="number" min="1" name="width" th:value="${good.getWidth()}">
+                </td>
+            </tr>
+            <tr>
+                <td> <label>高 </label></td>
+                <td><input required="required" pattern="^\d+$" type="number" min="1" name="height" th:value="${good.getHeight()}"><br>
+                </td>
+            </tr>
+            <tr>
+                <td> <label>单位</label></td>
+                <td> <input required="required" type="text" name="unit" th:value="${good.getUnit()}"><br>
+                </td>
+            </tr>
+        </table>
+         <button type="submit" class="btn btn-primary">提交</button>
     </form>
 </div>
-<link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-<!-- This page CSS -->
-<!-- chartist CSS -->
-<link th:href="@{assets/plugins/chartist-js/dist/chartist.min.css}" rel="stylesheet">
-<link th:href="@{assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css}" rel="stylesheet">
-<!--c3 CSS -->
-<link th:href="@{assets/plugins/c3-master/c3.min.css}" rel="stylesheet">
-<!-- Custom CSS -->
-<link th:href="@{css/style.css}" rel="stylesheet">
-<!-- Dashboard 1 Page CSS -->
-<link th:href="@{css/pages/dashboard.css}" rel="stylesheet">
-<!-- You can change the theme colors from here -->
-<link th:href="@{css/colors/default-dark.css}" id="theme" rel="stylesheet">
-<script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
-<!-- Bootstrap popper Core JavaScript -->
-<script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
-<script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
-<!--Wave Effects -->
-<script th:src="@{js/waves.js}"></script>
-<!--Menu sidebar -->
-<script th:src="@{js/sidebarmenu.js}"></script>
-<!--Custom JavaScript -->
-<script th:src="@{js/custom.min.js}"></script>
-<!-- ============================================================== -->
-<!-- This page plugins -->
-<!-- ============================================================== -->
-<script th:src="@{assets/plugins/chartist-js/dist/chartist.min.js}"></script>
-<script th:src="@{assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js}"></script>
-<!--c3 JavaScript -->
-<script th:src="@{assets/plugins/d3/d3.min.js}"></script>
-<script th:src="@{assets/plugins/c3-master/c3.min.js}"></script>
-<!-- Chart JS -->
-<script th:src="@{js/dashboard.js}"></script>
+
 </body>
 </html>

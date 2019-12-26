@@ -11,7 +11,6 @@ import java.io.Serializable;
  */
 @Data
 @NoArgsConstructor
-
 public class OrderGood implements Serializable {
     private String orderid;
 

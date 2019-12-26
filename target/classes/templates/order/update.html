@@ -6,34 +6,11 @@
     <link th:href="@{assets/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{css/style.css}" rel="stylesheet">
     <link th:href="@{css/colors/default-dark.css}" id="theme" rel="stylesheet">
-    <script type="text/javascript" th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
-    <script type="text/javascript" th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
-    <script type="text/javascript" th:src="@{js/waves.js}"></script>
-    <script type="text/javascript" th:src="@{js/sidebarmenu.js}"></script>
-    <script type="text/javascript" th:src="@{js/custom.min.js}"></script>
     <script type="text/javascript" th:src="@{js/address.js}"></script>
-</head><link th:href="@{assets/plugins/chartist-js/dist/chartist.min.css}" rel="stylesheet">
-<link th:href="@{assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css}" rel="stylesheet">
-<link th:href="@{assets/plugins/c3-master/c3.min.css}" rel="stylesheet">
-<link th:href="@{css/style.css}" rel="stylesheet">
-<link th:href="@{css/pages/dashboard.css}" rel="stylesheet">
-<script th:src="@{assets/plugins/jquery/jquery.min.js}"></script>
-<script th:src="@{assets/plugins/bootstrap/js/popper.min.js}"></script>
-<script th:src="@{assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
-<script th:src="@{js/perfect-scrollbar.jquery.min.js}"></script>
-<script th:src="@{js/waves.js}"></script>
-<script th:src="@{js/sidebarmenu.js}"></script>
-<script th:src="@{js/custom.min.js}"></script>
-<script th:src="@{assets/plugins/chartist-js/dist/chartist.min.js}"></script>
-<script th:src="@{assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js}"></script>
-<script th:src="@{assets/plugins/d3/d3.min.js}"></script>
-<script th:src="@{assets/plugins/c3-master/c3.min.js}"></script>
-<script th:src="@{js/dashboard.js}"></script>
+</head>
 <body>
 
-<div class="container">
+<div class="container col-6 col-offset-5" style="margin-top: 100px">
     <form th:action="@{/updateOrder}" method="post">
         <table class="table table-bordered table-hover table-striped">
             <tr>
@@ -61,13 +38,13 @@
             </tr>
             <tr>
                 <td>寄件省</td>
-<!--                <td> <input type="text" name="sprovince" th:value="${order.getSprovince()}"></td>-->
-                    <td><select id="sProvince" name="sprovince" ></select></td>
+                <td> <input type="text" name="sprovince" th:value="${order.getSprovince()}"></td>
+<!--                    <td><select id="spprovince" name="sprovince" ></select></td>-->
             </tr>
             <tr>
                 <td>市</td>
-<!--                <td><input type="text" name="scity" th:value="${order.getScity()}"></td>-->
-                    <td><select id="sCity" name="scity" ></select></td>
+                <td><input type="text" name="scity" th:value="${order.getScity()}"></td>
+<!--                    <td><select id="sccity" name="scity" ></select></td>-->
             </tr>
             <tr>
                 <td>收件人</td>
@@ -85,20 +62,20 @@
             <tr>
                 <td>收件人省</td>
                 <td><input type="text" name="rprovince" th:value="${order.getRprovince()}"></td>
+<!--                <td><select id="rpprovince" name="rProvince" ></select></td>-->
             </tr>
             <tr>
                 <td>市</td>
                 <td> <input type="text" name="rcity" th:value="${order.getRcity()}"></td>
+<!--                <td><select id="rccity" name="rcity" ></select></td>-->
             </tr>
         </table>
    <button type="submit" class="btn btn-secondary">提交</button>
     </form>
-    <script type="text/javascript">
-        addressInit('rProvince', 'rCity',"${order.getRprovince()}","${order.getRcity()}");
-        // addressInit('sProvince', 'sCity',"${order.getSprovince()}","${order.getScity()}");
-        addressInit('sProvince', 'sCity');
-    </script>
 </div>
-
+<script type="text/javascript">
+    addressInit('rpprovince', 'rccity',"北京","北京");
+    addressInit('spprovince', 'sccity',"北京","北京");
+</script>
 </body>
 </html>
