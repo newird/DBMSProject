@@ -232,6 +232,15 @@ class ApplicationTests {
             System.out.println("order = " + order);
         }
     }
+    @Test
+    public void asdohfn(){
+        List<Order> orders = orderDao.selectOrder();
+        for (Order order : orders) {
+            List<goodnum> goods = order.getGoods();
+            System.out.println("goods = " + goods);
+//            System.out.println("order = " + order);
+        }
+    }
 }
 
 

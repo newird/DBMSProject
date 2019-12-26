@@ -19,10 +19,10 @@
         <association property="client" javaType="com.ce.springboot.pojo.Client">
             <result property="namezh" column="NameZh"/>
         </association>
-        <collection property="num" ofType="Integer">
-            <result column="num"/>
-        </collection>
-        <collection property="goods" ofType="com.ce.springboot.pojo.Good">
+<!--        <collection property="num" ofType="Integer">-->
+<!--            <result column="num"/>-->
+<!--        </collection>-->
+        <collection property="goodnums" ofType="com.ce.springboot.pojo.goodnum">
             <result property="name" column="gname"/>
             <result property="goodid" column="gid"/>
             <result property="length" column="length"/>
@@ -31,6 +31,7 @@
             <result property="type" column="type"/>
             <result property="temperature" column="temperature"/>
             <result property="expiry" column="expiry"/>
+            <result property="num" column="num"/>
         </collection>
     </resultMap>
 

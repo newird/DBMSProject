@@ -153,45 +153,27 @@
                                                         <table>
                                                             <tr>
                                                                 <td>货物名</td>
-                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>长</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getLength()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>宽</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getWidth()}"></td>
-                                                            <tr>
                                                                 <td>高</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getHeight()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>种类</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getType()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>温度</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getTemperature()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>保质期</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getExpiry()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>数量</td>
-                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+
                                                             </tr>
-                                                            <tr sec:authorize="hasRole('check')">
-                                                                <td>删除</td>
+                                                            <tr th:each="g:${o.getGoods()}">
+                                                                <td th:text="${g.getName()}"></td>
+                                                                <td th:text="${g.getLength()}"></td>
+                                                                <td th:text="${g.getWidth()}"></td>
+                                                                <td th:text="${g.getHeight()}"></td>
+                                                                <td th:text="${g.getType()}"></td>
+                                                                <td th:text="${g.getTemperature()}"></td>
+                                                                <td th:text="${g.getExpiry()}"></td>
+                                                                <td th:text="${g.getNum()}"></td>
                                                                 <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                    <a class="block btn btn-sm btn-danger"
+                                                                       th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodid()}">删除</a>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -268,53 +250,31 @@
                                                         </td>
 
                                                     </tr>
-                                                    <td>
-                                                        <table>
                                                             <tr>
                                                                 <td>货物名</td>
-                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>长</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getLength()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>宽</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getWidth()}"></td>
-                                                            <tr>
                                                                 <td>高</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getHeight()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>种类</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getType()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>温度</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getTemperature()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>保质期</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getExpiry()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>数量</td>
-                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+
                                                             </tr>
-                                                            <tr sec:authorize="hasRole('admin')">
-                                                                <td>删除</td>
-                                                                <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                            <tr th:each="g:${o.getGoods()}">
+                                                                <td th:text="${g.getName()}"></td>
+                                                                <td th:text="${g.getLength()}"></td>
+                                                                <td th:text="${g.getWidth()}"></td>
+                                                                <td th:text="${g.getHeight()}"></td>
+                                                                <td th:text="${g.getType()}"></td>
+                                                                <td th:text="${g.getTemperature()}"></td>
+                                                                <td th:text="${g.getExpiry()}"></td>
+                                                                <td th:text="${g.getNum()}"></td>
+                                                                <td >
+                                                                    <a class="block btn btn-sm btn-danger"
+                                                                       th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodid()}">删除</a>
                                                                 </td>
                                                             </tr>
-                                                        </table>
-                                                    </td>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -387,51 +347,32 @@
 
                                                     </tr>
                                                     <td>
-                                                        <table>
                                                             <tr>
                                                                 <td>货物名</td>
-                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>长</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getLength()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>宽</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getWidth()}"></td>
-                                                            <tr>
                                                                 <td>高</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getHeight()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>种类</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getType()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>温度</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getTemperature()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>保质期</td>
-                                                                <td th:each="g:${o.getGoods()}"
-                                                                    th:text="${g.getExpiry()}"></td>
-                                                            </tr>
-                                                            <tr>
                                                                 <td>数量</td>
-                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+
                                                             </tr>
-                                                            <tr sec:authorize="hasRole('admin')">
-                                                                <td>删除</td>
-                                                                <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                            <tr th:each="g:${o.getGoods()}">
+                                                                <td th:text="${g.getName()}"></td>
+                                                                <td th:text="${g.getLength()}"></td>
+                                                                <td th:text="${g.getWidth()}"></td>
+                                                                <td th:text="${g.getHeight()}"></td>
+                                                                <td th:text="${g.getType()}"></td>
+                                                                <td th:text="${g.getTemperature()}"></td>
+                                                                <td th:text="${g.getExpiry()}"></td>
+                                                                <td th:text="${g.getNum()}"></td>
+                                                                <td >
+                                                                    <a class="block btn btn-sm btn-danger"
+                                                                       th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodid()}">删除</a>
                                                                 </td>
                                                             </tr>
-                                                        </table>
+                                                            </tr>
                                                     </td>
                                                     </tbody>
                                                 </table>

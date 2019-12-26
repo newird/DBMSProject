@@ -25,9 +25,13 @@
 <!--<p th:text="${rphone}"></p>-->
 <!--<p th:text="${id}"></p>-->
 <!--<p th:text="${order}"></p>-->
-<p th:text="${submit}"></p>
+<div th:each="o:${submit}">
+    <div th:each="g:${o.getGoods()}">
+        <div th:text="${g.getName()}"></div>
+    </div>
+</div>
 <p th:text="${unsubmit}"></p>
-<p th:text="${orders}"></p>
+<!--<p th:text="${orders}"></p>-->
 <!--<p th:text="${name}"></p>-->
 <!--<p th:text="${goodid}"></p>-->
 </body>

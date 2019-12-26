@@ -7,19 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/goodnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/pojo/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generator/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/OrderDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/good/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/good/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/CheckOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/CheckOrder.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/pojo/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/generator/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/OrderDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/good/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/good/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
     </list>
@@ -83,8 +80,8 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -157,6 +154,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="ApplicationTests.asdohfn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ce.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ce.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
+      <option name="METHOD_NAME" value="asdohfn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationTests.asodihfaojdf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot" />
       <extension name="coverage">
@@ -184,22 +197,6 @@
       <option name="PACKAGE_NAME" value="com.ce.springboot" />
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
       <option name="METHOD_NAME" value="sdfhij" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApplicationTests.sdfhnojsdkf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ce.springboot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ce.springboot" />
-      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="sdfhnojsdkf" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -270,21 +267,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApplicationTests.sdfhnojsdkf" />
       <item itemvalue="JUnit.ApplicationTests.sdfjoisdfn" />
       <item itemvalue="JUnit.ApplicationTests.sdfjasdasdoisdfn" />
       <item itemvalue="JUnit.ApplicationTests.asodihfaojdf" />
       <item itemvalue="Maven.spring-boot [package]" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="JUnit.ApplicationTests.sdfhij" />
+      <item itemvalue="JUnit.ApplicationTests.asdohfn" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.asdohfn" />
         <item itemvalue="JUnit.ApplicationTests.sdfhij" />
         <item itemvalue="JUnit.ApplicationTests.asodihfaojdf" />
         <item itemvalue="JUnit.ApplicationTests.sdfjasdasdoisdfn" />
         <item itemvalue="JUnit.ApplicationTests.sdfjoisdfn" />
-        <item itemvalue="JUnit.ApplicationTests.sdfhnojsdkf" />
       </list>
     </recent_temporary>
   </component>
@@ -375,10 +372,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="274" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/73.0.1293.768@73.0.1293.768" timestamp="1577257421373" />
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577339899268">
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1577368912032">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577339899268" />
+    <state x="524" y="68" key="#com.intellij.ide.util.MemberChooser/73.0.1293.768@73.0.1293.768" timestamp="1577368912032" />
     <state x="449" y="159" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1576997365910">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -411,38 +408,38 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1577173869747" />
-    <state width="1250" height="370" key="GridCell.Tab.0.bottom" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.0.bottom" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
-    <state width="1250" height="370" key="GridCell.Tab.0.center" timestamp="1577365849952">
+    <state width="1250" height="370" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.0.center" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577365849952" />
-    <state width="1250" height="370" key="GridCell.Tab.0.left" timestamp="1577365849952">
+    <state width="1250" height="370" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.0.left" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577365849952" />
-    <state width="1250" height="370" key="GridCell.Tab.0.right" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.0.right" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
-    <state width="1250" height="370" key="GridCell.Tab.1.bottom" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.1.bottom" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
-    <state width="1250" height="370" key="GridCell.Tab.1.center" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.1.center" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
-    <state width="1250" height="370" key="GridCell.Tab.1.left" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.1.left" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
-    <state width="1250" height="370" key="GridCell.Tab.1.right" timestamp="1577365849954">
+    <state width="1250" height="370" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
+    <state width="1250" height="370" key="GridCell.Tab.1.right" timestamp="1577368999010">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577368999010" />
     <state width="1250" height="392" key="GridCell.Tab.2.bottom" timestamp="1577108278519">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
@@ -511,10 +508,10 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="420" y="1" key="refactoring.ChangeSignatureDialog/73.0.1293.768@73.0.1293.768" timestamp="1576913895481" />
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577351125666">
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577368760942">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1577351125666" />
+    <state x="382" y="89" width="672" height="678" key="search.everywhere.popup/73.0.1293.768@73.0.1293.768" timestamp="1577368760942" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

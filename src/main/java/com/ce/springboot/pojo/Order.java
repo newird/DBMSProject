@@ -40,9 +40,7 @@ public class Order implements Serializable {
 
     private Client client;
 
-    private List<Integer> num;
-
-    private List<Good> goods;
+    private List<goodnum> goodnums;
 
     public Order(String orderid, String send, String sphone,
                  String semail, String sprovince, String scity,
@@ -63,12 +61,8 @@ public class Order implements Serializable {
         this.check = check;
     }
     public Order(){}
-    public Order(String orderid, String send, String sphone,
-                 String semail, String sprovince, String scity,
-                 String receive, String rphone, String remail,
-                 String rprovince, String rcity, Date time,
-                 String check, Client client, List<Integer> num,
-                 List<Good> goods) {
+
+    public Order(String orderid, String send, String sphone, String semail, String sprovince, String scity, String receive, String rphone, String remail, String rprovince, String rcity, Date time, String check, Client client, List<goodnum> goodnums) {
         this.orderid = orderid;
         this.send = send;
         this.sphone = sphone;
@@ -83,8 +77,7 @@ public class Order implements Serializable {
         this.time = time;
         this.check = check;
         this.client = client;
-        this.num = num;
-        this.goods = goods;
+        this.goodnums = goodnums;
     }
 
     public String getOrderid() {
@@ -93,14 +86,6 @@ public class Order implements Serializable {
 
     public void setOrderid(String orderid) {
         this.orderid = orderid;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     public String getSend() {
@@ -199,19 +184,19 @@ public class Order implements Serializable {
         this.check = check;
     }
 
-    public List<Integer> getNum() {
-        return num;
+    public Client getClient() {
+        return client;
     }
 
-    public void setNum(List<Integer> num) {
-        this.num = num;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
-    public List<Good> getGoods() {
-        return goods;
+    public List<goodnum> getGoods() {
+        return goodnums;
     }
 
-    public void setGoods(List<Good> goods) {
-        this.goods = goods;
+    public void setGoods(List<goodnum> goodnums) {
+        this.goodnums = goodnums;
     }
 }
