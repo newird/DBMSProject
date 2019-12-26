@@ -63,11 +63,13 @@
                                 <div class="accordion" id="accordionExample">
                                     <form method="post" action="/OrderForm">
                                         <label>订单号</label><input type="text" value="" name="orderid" pattern="^\w{8}$">
-                                        <label>公司</label><input name="company"  value="" type="text">
+                                        <label>公司</label><input name="company" value="" type="text">
                                         <label>寄件人</label><input type="text" value="" name="send">
-                                        <label>寄件人手机号</label><input pattern="^1\d{10}$" value="" name="sphone" type="text">
+                                        <label>寄件人手机号</label><input pattern="^1\d{10}$" value="" name="sphone"
+                                                                    type="text">
                                         <label>收件人</label><input type="text" value="" name="receive">
-                                        <label>收件人手机号</label><input pattern="^1\d{10}$" value="" name="rphone" type="text">
+                                        <label>收件人手机号</label><input pattern="^1\d{10}$" value="" name="rphone"
+                                                                    type="text">
                                         <button type="submit">查询</button>
                                     </form>
 
@@ -123,41 +125,77 @@
                                                         <td th:text="${o.getRemail()}"></td>
                                                         <td th:text="${o.getRprovince()+' ' + o.getRcity()}"></td>
                                                         <td th:text="${o.getTime()}"></td>
-                                                    <td>
-                                                        <tr>
+                                                        <td>
+                                                    <tr>
 
 
                                                         <td>
-                                                            <a class="block btn btn-sm btn-danger" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                            <a class="block btn btn-sm btn-danger"
+                                                               th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-primary" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                            <a class="btn btn-sm btn-primary"
+                                                               th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-primary" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                            <a class="btn btn-sm btn-primary"
+                                                               th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-success" sec:authorize="hasRole('service')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">提交</a>
+                                                            <a class="btn btn-sm btn-success"
+                                                               sec:authorize="hasRole('service')"
+                                                               th:href="@{/orderSubmit/}+${o.getOrderid()}">提交</a>
                                                         </td>
                                                     </tr>
                                                     </td>
                                                     </tbody>
                                                     <td>
                                                         <table>
-                                                                <tr>
-                                                                    <td>货物名</td>
-                                                                    <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>数量</td>
-                                                                    <td th:each="n:${o.getNum()}" th:text="${n}"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>删除</td>
-                                                                    <td th:each="g:${o.getGoods()}">
-                                                                        <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
-                                                                    </td>
-                                                                </tr>
+                                                            <tr>
+                                                                <td>货物名</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getName()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>长</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getLength()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>宽</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getWidth()}"></td>
+                                                            <tr>
+                                                                <td>高</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getHeight()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>种类</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getType()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>温度</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getTemperature()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>保质期</td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getExpiry()}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>数量</td>
+                                                                <td th:each="n:${o.getNum()}" th:text="${n}"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>删除</td>
+                                                                <td th:each="g:${o.getGoods()}">
+                                                                    <a class="block btn btn-sm btn-danger"
+                                                                       th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                </td>
+                                                            </tr>
                                                         </table>
                                                     </td>
                                                     </tbody>
@@ -226,7 +264,8 @@
                                                         <table>
                                                             <tr>
                                                                 <td>货物名</td>
-                                                                <td th:each="g:${o.getGoods()}" th:text="${g.getName()}"></td>
+                                                                <td th:each="g:${o.getGoods()}"
+                                                                    th:text="${g.getName()}"></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>数量</td>

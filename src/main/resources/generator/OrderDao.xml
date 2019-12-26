@@ -38,6 +38,7 @@
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
         rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        ,  expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -46,7 +47,8 @@
     <select id="getSubmit" resultMap="OrderMap">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid,
+        expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -56,7 +58,8 @@
     <select id="getPass" resultMap="OrderMap">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid,
+        expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -66,7 +69,8 @@
     <select id="getUnpass" resultMap="OrderMap">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid,
+        expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -76,7 +80,8 @@
     <select id="fuzzselect" resultMap="OrderMap" parameterType="map">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid,
+         expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -105,7 +110,7 @@
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
         rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,
-        g.goodID gid,g.goodID, name, expiry, temperature, type, mass, `package`, length, width, height, unit
+        g.goodID gid, expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -135,7 +140,8 @@
     <select id="getPassfuzz" resultMap="OrderMap" parameterType="map">
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
-        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
+        rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid,
+         expiry, temperature, `type`, mass, length, width, height, unit
         from client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
@@ -165,7 +171,7 @@
         select o.orderId oid,send, sphone,semail,
         sprovince,scity,receive,rphone,remail remail,
         rprovince,rcity,`time`, `check`,c.NameZh,og.num,g.name gname,g.goodID gid
-        from client c,`order` o,good g,`order_good` og
+        , expiry, temperature, `type`, mass, length, width, height, unitfrom client c,`order` o,good g,`order_good` og
         where c.companyCode = o.client
         and o.orderId = og.orderID
         and og.goodID = g.goodID
