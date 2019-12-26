@@ -20,4 +20,10 @@ public interface OrderGoodDao {
     int deleteOrderById(String id);
 
     int deleteByKey(String orderId,int goodId);
+
+    int ordergoodexist(String orderid ,int goodid);
+
+    int selectnum(String orderid ,int goodid);
+
+    int updateNum(OrderGood orderGood);
 }

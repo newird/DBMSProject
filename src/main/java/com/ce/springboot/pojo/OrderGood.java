@@ -1,6 +1,7 @@
 package com.ce.springboot.pojo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -9,12 +10,20 @@ import java.io.Serializable;
  * @author 
  */
 @Data
+@NoArgsConstructor
+
 public class OrderGood implements Serializable {
     private String orderid;
 
     private Integer goodid;
 
     private Integer num;
+
+    public OrderGood(String orderid, Integer goodid, Integer num) {
+        this.orderid = orderid;
+        this.goodid = goodid;
+        this.num = num;
+    }
 
     public String getOrderid() {
         return orderid;

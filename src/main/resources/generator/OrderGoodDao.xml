@@ -56,4 +56,19 @@
     delete  from `order_good`
     where orderID = #{orderId} and goodID = #{goodId}
   </delete>
+    <select id="ordergoodexist" parameterMap="Key" resultType="int">
+        select count(goodid)
+        from `order_good`
+        where goodID = #{goodid} and orderID = #{orderid}
+    </select>
+    <select id="selectnum" parameterMap="Key" resultType="int">
+        select num from `order_good` where goodID = #{goodid} and orderID = #{orderid}
+    </select>
+    <update id="updateNum" parameterType="com.ce.springboot.pojo.OrderGood">
+        update `order_good`
+        <set>
+            num = #{num}
+        </set>
+        where goodID = #{goodid} and orderID = #{orderid}
+    </update>
 </mapper>

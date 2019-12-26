@@ -202,6 +202,15 @@ class ApplicationTests {
         List<Good> fuzzsearch = goodDao.fuzzsearch(map);
         System.out.println("fuzzsearch = " + fuzzsearch);
     }
+    @Test
+    public void sdfjasdasdoisdfn(){
+        OrderGood orderGood = new OrderGood("sf123123",7,2);
+        if(orderGoodDao.ordergoodexist("sf123123",7) == 1){
+            int num = orderGoodDao.selectnum("sf123123", 7);
+            orderGood.setNum(orderGood.getNum() + num);
+        }
+        orderGoodDao.updateNum(orderGood);
+    }
 }
 
 

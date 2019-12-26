@@ -115,9 +115,15 @@ public class orderController {
     }
 
     @PostMapping("/addoGood")
-    public String ooggadd(OrderGood orderGood) {
+    public String ooggadd(OrderGood orderGood,Model model) {
         orderGood.setOrderid(id);
-        orderGoodDao.insert(orderGood);
+        if(orderGoodDao.ordergoodexist(id,orderGood.getGoodid()) == 1){
+            int num = orderGoodDao.selectnum(id, orderGood.getGoodid());
+            orderGood.setNum(orderGood.getNum() + num);
+            orderGoodDao.updateNum(orderGood);
+        }else{
+            orderGoodDao.insert(orderGood);
+        }
         return "redirect:/orders";
     }
 
