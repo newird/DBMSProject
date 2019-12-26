@@ -114,6 +114,7 @@ public class orderController {
         return "redirect:/orders";
     }
 
+
     @PostMapping("/addoGood")
     public String ooggadd(OrderGood orderGood,Model model) {
         orderGood.setOrderid(id);
@@ -136,17 +137,7 @@ public class orderController {
 
     }
 
-    @GetMapping("/orderscheck")
-    public String oc(Model model) {
-        List<Order> submit = orderDao.getSubmit();
-        List<Order> pass = orderDao.getPass();
-        List<Order> unpass = orderDao.getUnpass();
-        model.addAttribute("submit", submit);
-        model.addAttribute("pass", pass);
-        model.addAttribute("unpass", unpass);
-        return "order/CheckOrder";
 
-    }
 
     @GetMapping("/orderSubmit/{id}")
     public String submit(@PathVariable("id") String id) {
@@ -200,6 +191,17 @@ public class orderController {
 //        return "test";
     }
 
+
+    @GetMapping("/orderscheck")
+    public String oc(Model model) {
+        List<Order> submit = orderDao.getSubmit();
+        List<Order> pass = orderDao.getPass();
+        List<Order> unpass = orderDao.getUnpass();
+        model.addAttribute("submit", submit);
+        model.addAttribute("pass", pass);
+        model.addAttribute("unpass", unpass);
+        return "order/CheckOrder";
+    }
     @PostMapping("/ordercheckForm")
     public String sdofcckkoo(String orderid, String company
             , String send, String sphone,
@@ -233,6 +235,58 @@ public class orderController {
         model.addAttribute("unpass", unpass);
         return "order/CheckOrder";
 //        return "test";
+    }
+    @GetMapping("/cdelOrder/{id}")
+
+    public String afeleteOrder(@PathVariable("id") String id) {
+        orderGoodDao.deleteOrderById(id);
+        orderDao2.deleteByPrimaryKey(id);
+        return "redirect:/orderscheck";
+    }
+    @GetMapping("/cdelog/{id}")
+
+    public String asdeleteog(@PathVariable("id") String id, Model model) {
+        String orderId = id.substring(0, 8);
+        String goodId = id.substring(8);
+
+        orderGoodDao.deleteByKey(orderId, Integer.parseInt(goodId));
+        return "redirect:/orderscheck";
+    }
+    @GetMapping("/cOrderupdate/{id}")
+    public String asupdateOrder(Model model, @PathVariable("id") String id) {
+        Order2 order = orderDao2.selectByPrimaryKey(id);
+        model.addAttribute("order", order);
+        List<Client> clients = clientDao.selectClient();
+        model.addAttribute("clients", clients);
+//        List<Good> good = goodDao.selectAllGood();
+//        model.addAttribute("good",good);
+        return "order/cupdate";
+    }
+
+    @PostMapping("/cupdateOrder")
+    public String uuuaspdateOrder(Order2 order) {
+        orderDao2.updateByPrimaryKey(order);
+        return "redirect:/orderscheck";
+    }
+    @GetMapping("/caddoGood/{id}")
+    public String ooggsasssadd(Model model, @PathVariable("id") String id) {
+        this.id = id;
+        List<Good> goods = goodDao.selectAllGood();
+        model.addAttribute("good", goods);
+        return "order/caddGood";
+
+    }
+    @PostMapping("/caddoGood")
+    public String ooggadasd(OrderGood orderGood, Model model) {
+        orderGood.setOrderid(id);
+        if(orderGoodDao.ordergoodexist(id,orderGood.getGoodid()) == 1){
+            int num = orderGoodDao.selectnum(id, orderGood.getGoodid());
+            orderGood.setNum(orderGood.getNum() + num);
+            orderGoodDao.updateNum(orderGood);
+        }else{
+            orderGoodDao.insert(orderGood);
+        }
+        return "redirect:/orderscheck";
     }
 
 

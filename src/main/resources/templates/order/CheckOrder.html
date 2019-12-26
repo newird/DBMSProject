@@ -130,14 +130,14 @@
                                                         <td>
                                                     <tr>
                                                         <td>
-                                                            <a class="block btn btn-sm btn-danger" sec:authorize="hasRole('check')" th:href="@{/delOrder/}+${o.getOrderid()}">删除</a>
+                                                            <a class="block btn btn-sm btn-danger" sec:authorize="hasRole('check')" th:href="@{/cdelOrder/}+${o.getOrderid()}">删除</a>
                                                         </td>
                                                         <td>
-                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/addoGood/}+${o.getOrderid()}">添加货物</a>
+                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/caddoGood/}+${o.getOrderid()}">添加货物</a>
                                                         </td>
 
                                                         <td>
-                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/Orderupdate/}+${o.getOrderid()}">编辑</a>
+                                                            <a class="btn btn-sm btn-primary" sec:authorize="hasRole('check')" th:href="@{/cOrderupdate/}+${o.getOrderid()}">编辑</a>
                                                         </td>
                                                         <td>
                                                             <a class="btn btn-sm btn-success" sec:authorize="hasRole('check')"  th:href="@{/orderSubmit/}+${o.getOrderid()}">审核</a>
@@ -162,7 +162,7 @@
                                                             <tr sec:authorize="hasRole('check')">
                                                                 <td>删除</td>
                                                                 <td th:each="g:${o.getGoods()}">
-                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/delog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
+                                                                    <a class="block btn btn-sm btn-danger" th:href="@{/cdelog/}+${o.getOrderid()}+${g.getGoodId()}">删除</a>
                                                                 </td>
                                                             </tr>
                                                         </table>
