@@ -8,11 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="913b4805-c513-4f1f-b1d3-273d439bfe67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ce/springboot/controller/orderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generator/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator/OrderDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/good/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/good/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/CheckOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/CheckOrder.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ce/springboot/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ce/springboot/controller/orderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/generator/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator/OrderDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/good/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/good/add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order/orderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,46 +69,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="adminuser: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="client: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="contactman: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="good: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="spring@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="transferorder: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="order_good: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -188,22 +157,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
-    <configuration name="ApplicationTests.asdfnk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ce.springboot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ce.springboot" />
-      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
-      <option name="METHOD_NAME" value="asdfnk" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApplicationTests.asodihfaojdf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot" />
       <extension name="coverage">
@@ -215,6 +168,22 @@
       <option name="PACKAGE_NAME" value="com.ce.springboot" />
       <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
       <option name="METHOD_NAME" value="asodihfaojdf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.sdfhij" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ce.springboot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ce.springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.ce.springboot.ApplicationTests" />
+      <option name="METHOD_NAME" value="sdfhij" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -301,21 +270,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Maven.spring-boot [package]" />
-      <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.ApplicationTests.asdfnk" />
       <item itemvalue="JUnit.ApplicationTests.sdfhnojsdkf" />
       <item itemvalue="JUnit.ApplicationTests.sdfjoisdfn" />
       <item itemvalue="JUnit.ApplicationTests.sdfjasdasdoisdfn" />
       <item itemvalue="JUnit.ApplicationTests.asodihfaojdf" />
+      <item itemvalue="Maven.spring-boot [package]" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.ApplicationTests.sdfhij" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.sdfhij" />
         <item itemvalue="JUnit.ApplicationTests.asodihfaojdf" />
         <item itemvalue="JUnit.ApplicationTests.sdfjasdasdoisdfn" />
         <item itemvalue="JUnit.ApplicationTests.sdfjoisdfn" />
         <item itemvalue="JUnit.ApplicationTests.sdfhnojsdkf" />
-        <item itemvalue="JUnit.ApplicationTests.asdfnk" />
       </list>
     </recent_temporary>
   </component>
@@ -442,38 +411,38 @@
       <screen x="73" y="0" width="1293" height="768" />
     </state>
     <state x="499" y="139" key="FileChooserDialogImpl/73.0.1293.768@73.0.1293.768" timestamp="1577173869747" />
-    <state width="1250" height="370" key="GridCell.Tab.0.bottom" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.0.bottom" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.0.center" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.0.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.0.center" timestamp="1577365849952">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.0.left" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.0.center/73.0.1293.768@73.0.1293.768" timestamp="1577365849952" />
+    <state width="1250" height="370" key="GridCell.Tab.0.left" timestamp="1577365849952">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.0.right" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.0.left/73.0.1293.768@73.0.1293.768" timestamp="1577365849952" />
+    <state width="1250" height="370" key="GridCell.Tab.0.right" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.1.bottom" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.0.right/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.1.bottom" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.1.center" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.1.bottom/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.1.center" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.1.left" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.1.center/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.1.left" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
-    <state width="1250" height="370" key="GridCell.Tab.1.right" timestamp="1577360096484">
+    <state width="1250" height="370" key="GridCell.Tab.1.left/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
+    <state width="1250" height="370" key="GridCell.Tab.1.right" timestamp="1577365849954">
       <screen x="73" y="0" width="1293" height="768" />
     </state>
-    <state width="1250" height="370" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577360096484" />
+    <state width="1250" height="370" key="GridCell.Tab.1.right/73.0.1293.768@73.0.1293.768" timestamp="1577365849954" />
     <state width="1250" height="392" key="GridCell.Tab.2.bottom" timestamp="1577108278519">
       <screen x="73" y="0" width="1293" height="768" />
     </state>

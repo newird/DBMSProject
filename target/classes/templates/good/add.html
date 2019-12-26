@@ -24,8 +24,8 @@
             <option value="保健"> 保健</option>
             <option value="其他"> 其他</option>
         </select>
-        <label>质量 </label> <input type="text" name="mass" required="required">
-        <label>包装方式 </label> <input type="text" name="packages" required="required">
+        <label>质量 </label> <input type="text" name="mass" pattern="^\d+$" required="required">
+        <label>包装方式 </label> <input type="text"  name="packages" required="required">
         <label>长 </label> <input type="number" pattern="^\d+$"min="1" name="length" required="required">
         <label>宽 </label> <input type="number" pattern="^\d+$"  min="1" name="width" required="required">
         <label>高 </label> <input type="number"pattern="^\d+$" min="1" name="height" required="required"><br>

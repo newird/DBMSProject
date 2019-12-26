@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //         .antMatchers("/order/**").hasRole("service")
         .antMatchers("/orders").hasRole("service")
         .antMatchers("/orderscheck").hasRole("check")
-        .antMatchers("users").hasRole("admin")
+        .antMatchers("/users").hasRole("admin")
     
 //         .antMatchers("/users").hasRole("admin")
 //                .antMatchers("/","/login").permitAll();

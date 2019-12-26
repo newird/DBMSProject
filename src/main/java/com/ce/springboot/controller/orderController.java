@@ -214,6 +214,7 @@ public class orderController {
         }
         if (!company.equals("")) {
             map.put("company", company);
+//            model.addAttribute("pass",company);
         }
         if (!send.equals("")) {
             map.put("send", send);
@@ -228,10 +229,10 @@ public class orderController {
             map.put("rphone", rphone);
         }
         List<Order> submit = orderDao.getSubmitfuzz(map);
-        List<Order> pass = orderDao.getPassfuzz(map);
-        List<Order> unpass = orderDao.getUnpassfuzz(map);
         model.addAttribute("submit", submit);
+        List<Order> pass = orderDao.getPassfuzz(map);
         model.addAttribute("pass", pass);
+        List<Order> unpass = orderDao.getUnpassfuzz(map);
         model.addAttribute("unpass", unpass);
         return "order/CheckOrder";
 //        return "test";

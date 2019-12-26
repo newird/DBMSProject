@@ -217,6 +217,21 @@ class ApplicationTests {
             System.out.println("order = " + order);
         }
     }
+    @Test
+    public void sdfhij(){
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("orderid","sf123123");
+        List<Order> orders = orderDao.getPassfuzz(map);
+        List<Order> unpass = orderDao.getUnpassfuzz(map);
+        List<Order> submit = orderDao.getSubmitfuzz(map);
+        for (Order order : orders) {
+            System.out.println("order = " + order);
+        } for (Order order : submit) {
+            System.out.println("order = " + order);
+        } for (Order order : unpass) {
+            System.out.println("order = " + order);
+        }
+    }
 }
 
 
